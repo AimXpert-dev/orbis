@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ORBIS — One Platform. Every Channel.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #080B14;
+    --bg2:      #0D1120;
+    --bg3:      #111827;
+    --blue:     #0057FF;
+    --cyan:     #00AEEF;
+    --white:    #F0F4FF;
+    --muted:    #8B9CC8;
+    --border:   rgba(0,87,255,0.2);
+    --discord:  #5865F2;
+    --telegram: #2AABEE;
+    --whatsapp: #25D366;
+    --green:    #25D366;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── Stars background ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 20% 15%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 25%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 80% 10%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 40% 60%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 10% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 70%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 50% 90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 40%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 50%, rgba(255,255,255,0.15) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 50%, rgba(255,255,255,0.2) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Nav ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 60px;
+    background: rgba(8,11,20,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+  .nav-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--cyan); }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .nav-cta:hover { background: #0045CC; box-shadow: 0 0 20px rgba(0,87,255,0.4); }
+
+  /* ── Sections ── */
+  section { position: relative; z-index: 1; }
+
+  /* ── Hero ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 40px 80px;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,87,255,0.12);
+    border: 1px solid rgba(0,87,255,0.35);
+    border-radius: 100px;
+    padding: 6px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+  .hero-badge::before { content: '●'; font-size: 8px; color: var(--green); }
+
+  .hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(42px, 7vw, 86px);
+    font-weight: 900;
+    letter-spacing: 12px;
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+  .hero h1 .glow {
+    background: linear-gradient(135deg, #FFFFFF 0%, var(--cyan) 60%, var(--blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(11px, 1.5vw, 14px);
+    letter-spacing: 5px;
+    color: var(--muted);
+    margin-bottom: 32px;
+    text-transform: uppercase;
+  }
+
+  .hero-desc {
+    max-width: 600px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.75;
+    margin: 0 auto 52px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    padding: 16px 40px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 30px rgba(0,87,255,0.35);
+  }
+  .btn-primary:hover { background: #0045CC; box-shadow: 0 4px 40px rgba(0,87,255,0.55); transform: translateY(-2px); }
+  .btn-ghost {
+    border: 1px solid var(--border);
+    color: var(--white);
+    padding: 16px 40px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+    background: rgba(255,255,255,0.03);
+  }
+  .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(0,174,239,0.06); }
+
+  /* orbit diagram */
+  .orbit-diagram {
+    margin-top: 80px;
+    position: relative;
+    width: 280px;
+    height: 280px;
+  }
+  .orbit-diagram .ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px dashed rgba(0,87,255,0.3);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .ring-1 { width: 260px; height: 260px; }
+  .ring-2 { width: 180px; height: 180px; border-color: rgba(0,174,239,0.2); }
+  .orbit-core {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,87,255,0.6) 0%, rgba(0,87,255,0.1) 70%, transparent 100%);
+    border: 2px solid var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--cyan);
+    box-shadow: 0 0 30px rgba(0,87,255,0.5), inset 0 0 20px rgba(0,87,255,0.2);
+  }
+  .orbit-node {
+    position: absolute;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    border: 2px solid;
+    background: var(--bg2);
+    box-shadow: 0 0 20px var(--node-color, rgba(0,87,255,0.4));
+    border-color: var(--node-color, var(--blue));
+  }
+  .node-discord  { --node-color: rgba(88,101,242,0.7); top: 2px;  left: 50%; transform: translateX(-50%); }
+  .node-telegram { --node-color: rgba(42,171,238,0.7); top: 50%; right: 2px;  transform: translateY(-50%); }
+  .node-app      { --node-color: rgba(0,174,239,0.7);  bottom: 2px; left: 50%; transform: translateX(-50%); }
+  .node-wa       { --node-color: rgba(37,211,102,0.7); top: 50%; left: 2px;  transform: translateY(-50%); }
+  .node-label {
+    position: absolute;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .label-discord  { top: -18px; left: 50%; transform: translateX(-50%); }
+  .label-telegram { right: -48px; top: 50%; transform: translateY(-50%); }
+  .label-app      { bottom: -18px; left: 50%; transform: translateX(-50%); }
+  .label-wa       { left: -56px; top: 50%; transform: translateY(-50%); }
+
+  /* ── Stats bar ── */
+  .stats {
+    padding: 40px 60px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: rgba(13,17,32,0.7);
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+  }
+  .stat-num span { color: var(--cyan); }
+  .stat-label { font-size: 12px; color: var(--muted); letter-spacing: 1px; margin-top: 6px; text-transform: uppercase; }
+
+  /* ── Features ── */
+  .features {
+    padding: 100px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+  }
+  .section-desc { color: var(--muted); font-size: 16px; max-width: 520px; margin-bottom: 60px; }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .feat-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .feat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--feat-color, var(--blue)), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .feat-card:hover { border-color: var(--feat-color, var(--blue)); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+  .feat-card:hover::before { opacity: 1; }
+
+  .feat-icon {
+    width: 52px; height: 52px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    background: rgba(0,87,255,0.1);
+    border: 1px solid rgba(0,87,255,0.2);
+  }
+  .feat-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+  .feat-card p  { color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+  .feat-discord  { --feat-color: var(--discord); }
+  .feat-telegram { --feat-color: var(--telegram); }
+  .feat-app      { --feat-color: var(--cyan); }
+  .feat-wa       { --feat-color: var(--whatsapp); }
+  .feat-api      { --feat-color: var(--blue); }
+  .feat-push     { --feat-color: #FF6B35; }
+
+  .feat-discord  .feat-icon { background: rgba(88,101,242,0.12); border-color: rgba(88,101,242,0.3); }
+  .feat-telegram .feat-icon { background: rgba(42,171,238,0.12); border-color: rgba(42,171,238,0.3); }
+  .feat-app      .feat-icon { background: rgba(0,174,239,0.12);  border-color: rgba(0,174,239,0.3); }
+  .feat-wa       .feat-icon { background: rgba(37,211,102,0.12); border-color: rgba(37,211,102,0.3); }
+  .feat-api      .feat-icon { background: rgba(0,87,255,0.12);   border-color: rgba(0,87,255,0.3); }
+  .feat-push     .feat-icon { background: rgba(255,107,53,0.12); border-color: rgba(255,107,53,0.3); }
+
+  /* ── Screenshots ── */
+  .screenshots {
+    padding: 100px 60px;
+    background: linear-gradient(180deg, transparent, rgba(0,87,255,0.04), transparent);
+  }
+  .screenshots-inner { max-width: 1200px; margin: 0 auto; }
+  .screenshots-header { margin-bottom: 60px; }
+
+  .screen-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0;
+  }
+  .tab {
+    padding: 12px 24px;
+    border-radius: 8px 8px 0 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-bottom: none;
+    margin-bottom: -1px;
+    transition: all 0.2s;
+  }
+  .tab.active { color: var(--white); background: var(--bg3); border-color: var(--border); border-bottom-color: var(--bg3); }
+  .tab:not(.active):hover { color: var(--white); }
+
+  .screen-panel { display: none; }
+  .screen-panel.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+
+  .screen-slot {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 13px;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: pointer;
+  }
+  .screen-slot:hover { border-color: var(--cyan); transform: translateY(-3px); }
+  .screen-slot img { width: 100%; height: 100%; object-fit: contain; display: block; background: var(--bg3); }
+  .screen-slot .placeholder-icon { font-size: 32px; opacity: 0.4; }
+  .screen-slot .placeholder-text { opacity: 0.5; font-size: 12px; }
+
+  /* Lightbox */
+  .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.93); z-index:999; align-items:center; justify-content:center; }
+  .lightbox.open { display:flex; }
+  .lightbox img { max-width:82vw; max-height:88vh; object-fit:contain; border-radius:8px; box-shadow:0 0 60px rgba(0,0,0,0.8); transition: opacity 0.2s; }
+  .lightbox img.fade { opacity:0; }
+  .lightbox-close { position:absolute; top:20px; right:28px; font-size:32px; color:#fff; cursor:pointer; opacity:0.6; line-height:1; z-index:2; }
+  .lightbox-close:hover { opacity:1; }
+  .lightbox-arrow {
+    position:absolute; top:50%; transform:translateY(-50%);
+    width:52px; height:52px; border-radius:50%;
+    background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15);
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px; color:#fff; cursor:pointer; opacity:0.7;
+    transition: all 0.2s; z-index:2; user-select:none;
+  }
+  .lightbox-arrow:hover { background:rgba(0,87,255,0.4); border-color:var(--blue); opacity:1; }
+  .lightbox-prev { left:20px; }
+  .lightbox-next { right:20px; }
+  .lightbox-counter { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); font-size:13px; color:rgba(255,255,255,0.5); letter-spacing:2px; }
+  .lightbox-dots { display:flex; gap:8px; }
+  .lightbox-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.25); cursor:pointer; transition:background 0.2s; }
+  .lightbox-dot.active { background:var(--cyan); }
+
+  /* ── How it works ── */
+  .how {
+    padding: 100px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    margin-top: 60px;
+    position: relative;
+  }
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 36px; left: 80px; right: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), var(--border), transparent);
+  }
+  .step { text-align: center; }
+  .step-num {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: var(--bg2);
+    border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cyan);
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0,87,255,0.2);
+  }
+  .step h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .step p  { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* ── Pricing ── */
+  .pricing {
+    padding: 100px 60px;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .pricing-inner { max-width: 1100px; margin: 0 auto; }
+  .pricing-header { text-align: center; margin-bottom: 60px; }
+  .pricing-note {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+  .plan {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 32px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .plan:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .plan.featured {
+    border-color: var(--blue);
+    background: linear-gradient(160deg, rgba(0,87,255,0.08) 0%, var(--bg) 60%);
+    box-shadow: 0 0 40px rgba(0,87,255,0.15);
+  }
+  .plan-badge {
+    position: absolute;
+    top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--blue);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 16px;
+    border-radius: 100px;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+  .plan-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .plan-price {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .plan-price sup { font-size: 24px; font-weight: 400; vertical-align: top; margin-top: 10px; display: inline-block; color: var(--muted); }
+  .plan-price span { font-size: 14px; font-weight: 400; color: var(--muted); }
+  .plan-setup {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .plan-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+  .plan-features li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 14px; color: var(--muted);
+  }
+  .plan-features li.yes { color: var(--white); }
+  .plan-features li::before { content: '✓'; color: var(--green); font-weight: 700; min-width: 16px; margin-top: 1px; }
+  .plan-features li.no  { opacity: 0.4; }
+  .plan-features li.no::before { content: '✗'; color: var(--muted); }
+  .plan-features li.soon::before { content: '◔'; color: var(--cyan); }
+  .plan-features li.soon { color: var(--muted); }
+
+  .btn-plan {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
+  }
+  .btn-plan-primary { background: var(--blue); color: #fff; box-shadow: 0 4px 20px rgba(0,87,255,0.3); }
+  .btn-plan-primary:hover { background: #0045CC; box-shadow: 0 4px 30px rgba(0,87,255,0.5); }
+  .btn-plan-ghost { border: 1px solid var(--border); color: var(--white); background: transparent; }
+  .btn-plan-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
+
+  /* ── CTA finale ── */
+  .cta-final {
+    padding: 120px 60px;
+    text-align: center;
+    position: relative;
+  }
+  .cta-final::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,87,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-final h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .cta-final p { color: var(--muted); font-size: 17px; margin-bottom: 48px; position: relative; }
+
+  /* ── Footer ── */
+  footer {
+    padding: 40px 60px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(8,11,20,0.9);
+  }
+  .footer-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    letter-spacing: 6px;
+    color: var(--white);
+    font-weight: 900;
+  }
+  .footer-copy { font-size: 12px; color: var(--muted); letter-spacing: 1px; }
+  .footer-tagline { font-size: 11px; color: var(--muted); letter-spacing: 2px; }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .stats { gap: 40px; flex-wrap: wrap; padding: 40px 24px; }
+    .features, .how, .cta-final { padding: 80px 24px; }
+    .screenshots { padding: 80px 24px; }
+    .pricing { padding: 80px 24px; }
+    .plans { grid-template-columns: 1fr; }
+    .steps::before { display: none; }
+    footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">ORBIS<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">Come funziona</a></li>
+    <li><a href="#pricing">Prezzi</a></li>
+    <li><a href="#contact">Contatti</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Richiedi Demo →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Sistema attivo · Pronto al deploy</div>
+
+  <h1><span class="glow">ORBIS</span></h1>
+  <p class="hero-sub">One Platform · Every Channel</p>
+
+  <p class="hero-desc">
+    Un ecosistema completo per gestire prenotazioni, clienti e comunicazioni
+    su Discord, Telegram, App Mobile e WhatsApp — tutto sincronizzato
+    in tempo reale da un unico centro di controllo.
+  </p>
+
+  <div class="hero-ctas">
+    <a href="#pricing" class="btn-primary">Scopri i piani</a>
+    <a href="#how" class="btn-ghost">Come funziona</a>
+  </div>
+
+  <!-- Orbit diagram -->
+  <div class="orbit-diagram" style="margin-top:70px;">
+    <div class="ring ring-1"></div>
+    <div class="ring ring-2"></div>
+    <div class="orbit-core">CORE</div>
+    <div class="orbit-node node-discord">
+      <span>💬</span>
+      <span class="node-label label-discord">Discord</span>
+    </div>
+    <div class="orbit-node node-telegram">
+      <span>✈️</span>
+      <span class="node-label label-telegram">Telegram</span>
+    </div>
+    <div class="orbit-node node-app">
+      <span>📱</span>
+      <span class="node-label label-app">App</span>
+    </div>
+    <div class="orbit-node node-wa">
+      <span>💚</span>
+      <span class="node-label label-wa">WhatsApp</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item">
+    <div class="stat-num">4<span>+</span></div>
+    <div class="stat-label">Canali integrati</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">10<span>k+</span></div>
+    <div class="stat-label">Righe di codice</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">24<span>/7</span></div>
+    <div class="stat-label">Bot attivi</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">0<span>s</span></div>
+    <div class="stat-label">Sync tra piattaforme</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="section-label">Funzionalità</div>
+  <h2 class="section-title">Tutto connesso.<br/>Tutto automatico.</h2>
+  <p class="section-desc">
+    Ogni canale parla con gli altri. Il tuo team gestisce tutto da un punto.
+    I clienti prenotano da dove preferiscono.
+  </p>
+
+  <div class="features-grid">
+    <div class="feat-card feat-discord">
+      <div class="feat-icon">💬</div>
+      <h3>Bot Discord</h3>
+      <p>Prenotazioni via menu interattivi, apertura ticket, gestione staff, bridge verso Telegram. Tutto automatizzato senza lasciare Discord.</p>
+    </div>
+
+    <div class="feat-card feat-telegram">
+      <div class="feat-icon">✈️</div>
+      <h3>Bot Telegram</h3>
+      <p>Prenotazioni inline, notifiche clienti, pannello staff con approvazione in un click. I messaggi del ticket arrivano anche su Discord.</p>
+    </div>
+
+    <div class="feat-card feat-app">
+      <div class="feat-icon">📱</div>
+      <h3>App Mobile</h3>
+      <p>Pannello admin nativo per iOS e Android. Gestisci prenotazioni, conferma o annulla, vedi il calendario in tempo reale.</p>
+    </div>
+
+    <div class="feat-card feat-wa">
+      <div class="feat-icon">💚</div>
+      <h3>WhatsApp Business</h3>
+      <p>Prenotazioni e conferme via WhatsApp Cloud API. I clienti ricevono messaggi automatici sul canale che usano ogni giorno. <em style="color:var(--cyan);font-size:12px;">In arrivo</em></p>
+    </div>
+
+    <div class="feat-card feat-api">
+      <div class="feat-icon">⚡</div>
+      <h3>API Centralizzata</h3>
+      <p>Un backend FastAPI che sincronizza tutti i canali. Slot condivisi, nessuna doppia prenotazione, dati sempre consistenti.</p>
+    </div>
+
+    <div class="feat-card feat-push">
+      <div class="feat-icon">🔔</div>
+      <h3>Push Notifications</h3>
+      <p>Notifiche push in tempo reale per ogni evento: nuova prenotazione, conferma, annullamento. Staff sempre aggiornato.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section class="screenshots" id="screenshots">
+  <div class="screenshots-inner">
+    <div class="screenshots-header">
+      <div class="section-label">Anteprima</div>
+      <h2 class="section-title">Il sistema in azione</h2>
+      <p class="section-desc">Vedi come funziona su ogni piattaforma.</p>
+    </div>
+
+    <div class="screen-tabs">
+      <div class="tab active" onclick="switchTab(this,'tab-discord')">Discord</div>
+      <div class="tab" onclick="switchTab(this,'tab-telegram')">Telegram</div>
+      <div class="tab" onclick="switchTab(this,'tab-app')">App Mobile</div>
+    </div>
+
+    <!-- Discord panel -->
+    <div class="screen-panel active" id="tab-discord">
+      <div class="screen-slot" onclick="openLightbox('foto/prenota una sessione dis.jpg')">
+        <img src="foto/prenota una sessione dis.jpg" alt="Discord — Prenota una sessione"/>
+      </div>
+      <div class="screen-slot" onclick="openLightbox('foto/scegli servizio ds.jpg')">
+        <img src="foto/scegli servizio ds.jpg" alt="Discord — Scegli servizio"/>
+      </div>
+      <div class="screen-slot" onclick="openLightbox('foto/scegli giorno ds.png')">
+        <img src="foto/scegli giorno ds.png" alt="Discord — Scegli giorno"/>
+      </div>
+      <div class="screen-slot" onclick="openLightbox('foto/scegli orario ds.jpg')">
+        <img src="foto/scegli orario ds.jpg" alt="Discord — Scegli orario"/>
+      </div>
+      <div class="screen-slot" onclick="openLightbox('foto/note sessione ds.png')">
+        <img src="foto/note sessione ds.png" alt="Discord — Note sessione"/>
+      </div>
+    </div>
+
+    <!-- Telegram panel -->
+    <div class="screen-panel" id="tab-telegram">
+      <div class="screen-slot" onclick="openLightbox('foto/benvenuto tg.jpg')">
+        <img src="foto/benvenuto tg.jpg" alt="Telegram — Benvenuto"/>
+      </div>
+      <div class="screen-slot" onclick="openLightbox('foto/scegli piattaforma tg.jpg')">
+        <img src="foto/scegli piattaforma tg.jpg" alt="Telegram — Scegli piattaforma"/>
+      </div>
+      <div class="screen-slot" onclick="openLightbox('foto/scegli servizio tg.jpg')">
+        <img src="foto/scegli servizio tg.jpg" alt="Telegram — Scegli servizio"/>
+      </div>
+      <div class="screen-slot" onclick="openLightbox('foto/scegli giorno tg.jpg')">
+        <img src="foto/scegli giorno tg.jpg" alt="Telegram — Scegli giorno"/>
+      </div>
+      <div class="screen-slot" onclick="openLightbox('foto/scegli orario tg.jpg')">
+        <img src="foto/scegli orario tg.jpg" alt="Telegram — Scegli orario"/>
+      </div>
+    </div>
+
+    <!-- App panel -->
+    <div class="screen-panel" id="tab-app">
+      <div class="screen-slot" onclick="openLightbox('foto/scegli servizio da app.jpg')">
+        <img src="foto/scegli servizio da app.jpg" alt="App — Scegli servizio"/>
+      </div>
+      <div class="screen-slot" onclick="openLightbox('foto/acquisto da app.jpg')">
+        <img src="foto/acquisto da app.jpg" alt="App — Acquisto"/>
+      </div>
+      <div class="screen-slot" onclick="openLightbox('foto/prenota da app.jpg')">
+        <img src="foto/prenota da app.jpg" alt="App — Prenota"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="section-label">Processo</div>
+  <h2 class="section-title">Come funziona</h2>
+  <p class="section-desc">Dal primo contatto alla sessione confermata, tutto automatico.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h4>Il cliente prenota</h4>
+      <p>Sceglie servizio, data e orario direttamente su Discord, Telegram, App o WhatsApp.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h4>Lo staff riceve</h4>
+      <p>Notifica istantanea su tutti i canali del team. Il ticket si apre automaticamente.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h4>Conferma in un click</h4>
+      <p>Lo staff approva dalla app, da Telegram o da Discord. Lo slot si blocca su tutti i canali.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h4>Cliente notificato</h4>
+      <p>Messaggio automatico di conferma con tutte le istruzioni per prepararsi alla sessione.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <div class="pricing-header">
+      <div class="section-label">Piani</div>
+      <h2 class="section-title">Scegli il tuo piano</h2>
+      <p class="pricing-note">Setup una tantum + canone mensile hosting. Nessun costo nascosto.</p>
+    </div>
+
+    <div class="plans">
+      <!-- LITE -->
+      <div class="plan">
+        <div class="plan-name">Lite</div>
+        <div class="plan-price"><sup>€</sup>199</div>
+        <div class="plan-setup">Setup una tantum + €29/mese hosting</div>
+        <ul class="plan-features">
+          <li class="yes">Bot Discord prenotazioni</li>
+          <li class="yes">Bot Telegram prenotazioni</li>
+          <li class="yes">API backend centralizzata</li>
+          <li class="yes">Slot sincronizzati</li>
+          <li class="yes">Notifiche staff</li>
+          <li class="no">App Mobile admin</li>
+          <li class="no">Bridge Discord ↔ Telegram</li>
+          <li class="no">WhatsApp Business</li>
+          <li class="no">Push notifications clienti</li>
+        </ul>
+        <a href="#contact" class="btn-plan btn-plan-ghost">Inizia con Lite</a>
+      </div>
+
+      <!-- PRO (featured) -->
+      <div class="plan featured">
+        <div class="plan-badge">Più scelto</div>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price"><sup>€</sup>499</div>
+        <div class="plan-setup">Setup una tantum + €49/mese hosting</div>
+        <ul class="plan-features">
+          <li class="yes">Bot Discord prenotazioni</li>
+          <li class="yes">Bot Telegram prenotazioni</li>
+          <li class="yes">API backend centralizzata</li>
+          <li class="yes">Slot sincronizzati</li>
+          <li class="yes">Notifiche staff</li>
+          <li class="yes">App Mobile admin (iOS + Android)</li>
+          <li class="yes">Bridge Discord ↔ Telegram</li>
+          <li class="soon">WhatsApp Business (presto)</li>
+          <li class="yes">Push notifications clienti</li>
+        </ul>
+        <a href="#contact" class="btn-plan btn-plan-primary">Inizia con Pro</a>
+      </div>
+
+      <!-- ELITE -->
+      <div class="plan">
+        <div class="plan-name">Elite</div>
+        <div class="plan-price"><sup>€</sup>899</div>
+        <div class="plan-setup">Setup una tantum + €69/mese hosting</div>
+        <ul class="plan-features">
+          <li class="yes">Tutto il piano Pro</li>
+          <li class="yes">WhatsApp Business incluso</li>
+          <li class="yes">Branding personalizzato</li>
+          <li class="yes">Dominio custom</li>
+          <li class="yes">Onboarding dedicato</li>
+          <li class="yes">Supporto prioritario</li>
+          <li class="yes">Feature custom su richiesta</li>
+          <li class="yes">Report analytics mensile</li>
+          <li class="yes">SLA uptime 99.9% garantito</li>
+        </ul>
+        <a href="#contact" class="btn-plan btn-plan-ghost">Contattaci</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINALE -->
+<section class="cta-final" id="contact">
+  <h2>Pronto a mettere<br/>la tua attività in <span style="color:var(--cyan)">orbita</span>?</h2>
+  <p>Scrivici per una demo gratuita o per discutere un piano personalizzato.</p>
+  <div class="hero-ctas">
+    <a href="https://t.me/TUOUSERNAME" class="btn-primary">Scrivici su Telegram</a>
+    <a href="https://discord.gg/TUIDISCORD" class="btn-ghost">Discord Server</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ORBIS<span style="color:var(--cyan)">.</span></div>
+  <div class="footer-copy">© 2025 ORBIS — Tutti i diritti riservati</div>
+  <div class="footer-tagline">ONE PLATFORM · EVERY CHANNEL</div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+  <div class="lightbox-arrow lightbox-prev" onclick="lightboxNav(-1)">&#8249;</div>
+  <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()"/>
+  <div class="lightbox-arrow lightbox-next" onclick="lightboxNav(1)">&#8250;</div>
+  <div class="lightbox-counter">
+    <div class="lightbox-dots" id="lightbox-dots"></div>
+  </div>
+</div>
+
+<script>
+  let _lbImages = [];
+  let _lbIndex  = 0;
+
+  function switchTab(el, panelId) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.screen-panel').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById(panelId).classList.add('active');
+  }
+
+  function openLightbox(src) {
+    // Raccoglie tutte le immagini del pannello attivo
+    const panel = document.querySelector('.screen-panel.active');
+    _lbImages = Array.from(panel.querySelectorAll('img')).map(i => i.src);
+    _lbIndex  = _lbImages.findIndex(s => s.includes(src.split('/').pop().split('?')[0]));
+    if (_lbIndex === -1) _lbIndex = 0;
+    _renderLightbox();
+    document.getElementById('lightbox').classList.add('open');
+  }
+
+  function _renderLightbox() {
+    const img  = document.getElementById('lightbox-img');
+    img.classList.add('fade');
+    setTimeout(() => {
+      img.src = _lbImages[_lbIndex];
+      img.classList.remove('fade');
+    }, 150);
+
+    // Dots
+    const dots = document.getElementById('lightbox-dots');
+    dots.innerHTML = _lbImages.map((_, i) =>
+      `<div class="lightbox-dot ${i === _lbIndex ? 'active' : ''}" onclick="lightboxGoTo(${i})"></div>`
+    ).join('');
+
+    // Frecce visibili solo se ci sono più immagini
+    const hasMult = _lbImages.length > 1;
+    document.querySelector('.lightbox-prev').style.display = hasMult ? 'flex' : 'none';
+    document.querySelector('.lightbox-next').style.display = hasMult ? 'flex' : 'none';
+  }
+
+  function lightboxNav(dir) {
+    _lbIndex = (_lbIndex + dir + _lbImages.length) % _lbImages.length;
+    _renderLightbox();
+  }
+
+  function lightboxGoTo(i) {
+    _lbIndex = i;
+    _renderLightbox();
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+
+  // Click fuori dall'immagine chiude
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape')      closeLightbox();
+    if (e.key === 'ArrowRight')  lightboxNav(1);
+    if (e.key === 'ArrowLeft')   lightboxNav(-1);
+  });
+</script>
+</body>
+</html>

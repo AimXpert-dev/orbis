@@ -1,0 +1,309 @@
+================================================================
+ORBIS — ANALISI DI MERCATO
+Data: 03/03/2026
+================================================================
+
+
+SINTESI ESECUTIVA
+-----------------
+ORBIS si posiziona in un mercato ad alto potenziale e scarsamente
+presidiato: la gestione unificata di prenotazioni su Discord,
+Telegram, WhatsApp e App Mobile con sincronizzazione real-time e
+bridge bidirezionale. Nessun concorrente diretto offre questa
+combinazione come prodotto integrato nativo.
+
+
+================================================================
+1. DIMENSIONE DEL MERCATO
+================================================================
+
+Mercato Globale Software di Prenotazione:
+  - Appointment Scheduling Software 2025:  $546M
+  - Proiezione 2032:                       $1.518M
+  - CAGR:                                  15.7%
+  - Online Booking Software (broad) 2025:  $5.9B
+  - Proiezione 2033:                       $15.5B
+  - SaaS domina il segmento:               63.5% market share (2024)
+
+Piattaforme Target:
+
+  DISCORD (2025):
+  - MAU:                     259 milioni
+  - Utenti registrati totali: 689 milioni
+  - Server attivi:            28.4 milioni
+  - Utenti non-gamer:         46% (coach, consulenti, creator, business)
+  - Ticket Tool (bot leader): usato da 3.8 milioni di server
+  - Revenue Discord:          $561M nel 2025 (+29.2% YoY)
+
+  TELEGRAM (2025):
+  - MAU:                      1 miliardo (superato a marzo 2025)
+  - Bot ospitati:              10 milioni
+  - Business che lo usano:     1.5 milioni
+  - Interazioni bot/mese:      1.2 miliardi
+  - Payment bot transazioni:   $420M nel 2025
+
+  WHATSAPP BUSINESS:
+  - PMI che lo usano:          80%+
+  - Consumatori che preferiscono prenotare via WA bot: 60%+
+
+
+================================================================
+2. COMPETITOR DIRETTI
+================================================================
+
+Nessun prodotto unificato esiste sul mercato. Ecco i piu' vicini:
+
+------------------------------------------------------------------
+APOLLO (apollo.fyi) — Bot eventi Discord
+------------------------------------------------------------------
+  Focus:    Calendario ed eventi, NON prenotazioni business
+  Server:   241.000+ server Discord
+  Pricing:  Free (5 eventi max) | Premium $4.17/mese (annuale)
+  Mancanze: Zero Telegram, zero WhatsApp, zero app admin,
+            zero ticket staff, zero sync multi-piattaforma
+
+------------------------------------------------------------------
+SESH (sesh.fyi) — Bot calendario Discord
+------------------------------------------------------------------
+  Focus:    Calendario community, RSVP, poll disponibilita'
+  Pricing:  Free + Premium (non pubblico)
+  Mancanze: Solo Discord, nessuna integrazione Telegram/WhatsApp,
+            nessun flusso prenotazioni business, nessuna app admin
+
+------------------------------------------------------------------
+TELEGRAMBOOKING / HeyBookMeBot (telegrambooking.com)
+------------------------------------------------------------------
+  Focus:    Prenotazioni solo via Telegram
+  Pricing:  €10/mese | €27 trimestrale | €100 annuale
+  Trial:    7 giorni
+  Mancanze: Solo Telegram, nessun Discord, nessuna app admin,
+            nessun bridge, nessuna sync multi-canale
+
+------------------------------------------------------------------
+SETMORE (setmore.com) — Booking con notifica Discord
+------------------------------------------------------------------
+  Focus:    Software booking tradizionale
+  Pricing:  Free (fino 4 utenti) | Pro $5/utente/mese
+  Discord:  Solo notifica unidirezionale via Zapier (webhook)
+  Mancanze: Nessun bot interattivo Discord/Telegram, zero bridge
+
+------------------------------------------------------------------
+DT BRIDGE (discord-telegram-bot.com) — Sync messaggi
+------------------------------------------------------------------
+  Focus:    Bridge messaggi Discord <-> Telegram (solo testo)
+  Pricing:  Free, self-hosted
+  Mancanze: Zero booking logic, zero slot, zero notifiche push,
+            zero app admin — e' un relay di messaggi puro
+
+
+================================================================
+3. COMPETITOR INDIRETTI (Software Booking Tradizionali)
+================================================================
+
+------------------------------------------------------------------
+CALENDLY (calendly.com)
+------------------------------------------------------------------
+  Pricing:  Free | Standard $10/seat/mese | Teams $16/seat/mese
+            Enterprise: da $15.000/anno
+  Discord:  ZERO nativo (solo link esterno o Zapier)
+  Telegram: ZERO nativo
+  Gap:      Utente deve uscire da Discord, aprire browser,
+            usare link Calendly. Attrito enorme per community.
+
+------------------------------------------------------------------
+ACUITY SCHEDULING (acuityscheduling.com)
+------------------------------------------------------------------
+  Pricing:  Emerging $20/mese | Growing $34/mese | Power $61/mese
+  Discord:  ZERO nativo
+  Telegram: Solo notifiche, non bot interattivo
+  Gap:      Pensato per web/email. Chat platform non supportate.
+
+------------------------------------------------------------------
+SIMPLYBOOK.ME (simplybook.me)
+------------------------------------------------------------------
+  Pricing:  Free | Basic ~$11/mese | Standard ~$33/mese
+            Premium ~$66/mese
+  Discord:  ZERO
+  Telegram: ZERO
+  WhatsApp: SMS/WA reminders (piani superiori)
+  Gap:      Nessuna presenza sulle piattaforme chat-based.
+
+------------------------------------------------------------------
+CAL.COM (cal.com) — Open Source
+------------------------------------------------------------------
+  Pricing:  Free self-hosted | Cloud da $12/mese
+  Discord:  Si (video call, non bot prenotazioni)
+  Telegram: Solo notifiche, non bot interattivo
+  Gap:      Per replicare ORBIS servirebbero settimane di sviluppo
+            custom. Non e' un prodotto out-of-the-box.
+
+
+================================================================
+4. TABELLA COMPARATIVA COMPLETA
+================================================================
+
+Prodotto            | Prezzo base  | Discord  | Telegram | WhatsApp | App Admin | Bridge | Booking
+--------------------|--------------|----------|----------|----------|-----------|--------|--------
+Calendly Standard   | $10/seat/mese| Zapier   | No       | No       | No        | No     | Si
+Acuity Emerging     | $20/mese     | No       | Notifica | No       | No        | No     | Si
+SimplyBook Basic    | $11/mese     | No       | No       | SMS      | No        | No     | Si
+Apollo Premium      | $4.17/mese   | Si eventi| No       | No       | No        | No     | No
+TelegramBooking     | €10/mese     | No       | Si       | No       | No        | No     | Si
+Setmore Free        | Gratis       | Zapier   | No       | No       | Si (base) | No     | Si
+DT Bridge           | Gratis       | Si msg   | Si msg   | No       | No        | Si msg | No
+Cal.com Cloud       | $12/mese     | Si video | Notifica | Notifica | No        | No     | Si
+ORBIS               | TBD          | Nativo   | Nativo   | Si       | iOS+Android| Si bok| Si
+
+
+================================================================
+5. GAP DI MERCATO — COSA NON ESISTE CHE ORBIS OFFRE
+================================================================
+
+GAP #1 — Bridge bidirezionale Discord/Telegram con logica booking
+  I bridge esistenti (TediCross, DT Bridge) sincronizzano solo
+  messaggi di testo. Nessuno gestisce prenotazioni, slot,
+  disponibilita' e ticket staff con notifica su entrambe le
+  piattaforme simultaneamente. QUESTO NON ESISTE COME PRODOTTO.
+
+GAP #2 — App mobile admin nativa per gestori
+  Nessun sistema booking Discord/Telegram ha un'app iOS/Android
+  dedicata per approvare prenotazioni, visualizzare calendario,
+  gestire slot. I competitor offrono solo dashboard web.
+
+GAP #3 — Sincronizzazione slot real-time multi-canale
+  Booking da Discord che blocca automaticamente lo slot su
+  Telegram e WhatsApp in real-time: non esiste. I sistemi attuali
+  richiedono Zapier/n8n manuali, con latenza e setup tecnico.
+
+GAP #4 — Menu interattivi Discord nativi per prenotare
+  Calendly via Discord = link esterno al browser.
+  ORBIS = Select menu, bottoni, modal Discord nativi.
+  Zero redirect. Tutto nel canale. UX radicalmente superiore.
+
+GAP #5 — Target multi-settore su chat platform
+  Le soluzioni chat-based esistenti sono verticali:
+  booking hotel, booking gym, booking meeting room.
+  ORBIS e' orizzontale: qualsiasi business puo' usarlo.
+
+GAP #6 — Ticket staff integrato con prenotazione
+  I 3.8 milioni di server che usano Ticket Tool non hanno modo
+  di trasformare un ticket in una prenotazione sincronizzata
+  su Telegram. La combinazione non esiste come prodotto.
+
+
+================================================================
+6. PRICING RACCOMANDATO PER ORBIS
+================================================================
+
+  Piano LITE:
+    Setup:    €199 una tantum
+    Mensile:  €29/mese hosting
+    Include:  Discord + Telegram + API backend
+              Slot sincronizzati, notifiche staff
+
+  Piano PRO:
+    Setup:    €499 una tantum
+    Mensile:  €49/mese hosting
+    Include:  Tutto Lite + App Mobile (iOS + Android)
+              Bridge Discord<->Telegram, Push notifications
+
+  Piano ELITE:
+    Setup:    €899 una tantum
+    Mensile:  €69/mese hosting
+    Include:  Tutto Pro + WhatsApp Business
+              Branding personalizzato, dominio custom
+              Onboarding dedicato, supporto prioritario
+              Accesso codice sorgente, SLA garantito
+
+  Alternativa SaaS mensile (per scalare):
+    Starter:  €19-29/mese  — 1 canale, 50 prenot./mese
+    Pro:      €49-69/mese  — tutti i canali, illimitato
+    Business: €99-149/mese — multi-slot, multi-staff, analytics
+    Enterprise: custom     — API dedicata, SLA, onboarding
+
+
+================================================================
+7. TARGET MARKET SIZE — QUANTIFICAZIONE
+================================================================
+
+Discord (SAM):
+  - Server con attivita' business (5% stima conservativa): 1.42M
+  - Conversione realistica 2-3%:  28.000 - 42.000 clienti
+  - A €49/mese media:             €16M - 24M ARR potenziale
+
+Telegram (SAM):
+  - Business su Telegram:         1.5 milioni
+  - Interessati a booking bot (3%): 45.000 potenziali
+  - A €10-49/mese:                €5M - 26M ARR aggiuntivo
+
+Totale SAM stimato (3 anni, penetrazione 0.5-1%):
+  - €50M - €100M ARR
+
+
+================================================================
+8. OPPORTUNITA' E RISCHI
+================================================================
+
+OPPORTUNITA':
+  1. First-mover advantage reale: nessun competitor diretto
+     con la combinazione completa
+  2. Hook organico: ogni bot Discord installato porta visibilita'
+     nel server (effetto virale passivo)
+  3. Timing perfetto: Telegram 1 miliardo MAU, Discord si
+     diversifica dal gaming — mercato business chat in esplosione
+  4. Basso CAC: distribuzione via top.gg e Telegram Bot Store
+     riduce il costo di acquisizione clienti
+
+RISCHI:
+  1. Discord potrebbe aggiungere nativamente funzioni booking
+     (improbabile nel breve termine)
+  2. Calendly/Acuity potrebbero acquisire un bot Discord/Telegram
+  3. Dipendenza dalle API: breaking changes richiedono manutenzione
+  4. Frammentazione del mercato: difficile standardizzare
+     su tutti i settori
+
+
+================================================================
+CONCLUSIONE
+================================================================
+
+ORBIS occupa una nicchia non presidiata da nessun attore.
+
+I competitor indiretti (Calendly, Acuity, SimplyBook) sono forti
+sul booking tradizionale ma ciechi sulle piattaforme chat.
+
+I competitor su Discord/Telegram (Apollo, Sesh, TelegramBooking)
+gestiscono o eventi o prenotazioni su un solo canale, mai entrambi
+in modo sincrono con bridge bidirezionale.
+
+Il bridge Discord-Telegram con logica di prenotazione non esiste
+come prodotto commerciale.
+
+Il mercato di riferimento vale $546M nel 2025, cresce al 15.7%
+CAGR, le piattaforme target coprono 1.2 miliardi di utenti attivi.
+
+Il gap e' reale, misurabile, e commercialmente appetibile.
+
+ORBIS non ha competitor diretti. Il timing e' ottimo.
+
+================================================================
+FONTI
+================================================================
+
+  - Discord Statistics 2026 — DemandSage
+  - Telegram Statistics 2025 — RichAds Blog
+  - Apollo Discord Bot — apollo.fyi/premium
+  - Sesh Discord Bot — sesh.fyi/blog/new-pricing-june-2025
+  - TelegramBooking — telegrambooking.com
+  - Calendly Pricing 2025 — calendly.com/pricing
+  - Acuity Scheduling Pricing — capterra.com
+  - SimplyBook.me — simplybook.me
+  - Setmore Discord Integration — setmore.com/integrations/discord
+  - Appointment Scheduling Market — Fortune Business Insights
+  - Online Booking Software Market 2025-2033 — Reports Insights
+  - DT Bridge — discord-telegram-bot.com
+  - Cal.com — cal.com
+  - Ticket Tool — tickettool.xyz
+  - WhatsApp Business Booking — Infobip
+
+================================================================
