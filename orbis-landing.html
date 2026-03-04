@@ -476,7 +476,7 @@
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
-  .pricing-inner { max-width: 1100px; margin: 0 auto; }
+  .pricing-inner { max-width: 1340px; margin: 0 auto; }
   .pricing-header { text-align: center; margin-bottom: 60px; }
   .pricing-note {
     font-size: 13px;
@@ -486,8 +486,8 @@
 
   .plans {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     align-items: start;
   }
   .plan {
@@ -615,6 +615,9 @@
   .footer-tagline { font-size: 11px; color: var(--muted); letter-spacing: 2px; }
 
   /* ── Responsive ── */
+  @media (max-width: 1100px) {
+    .plans { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 768px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
@@ -860,64 +863,89 @@
     </div>
 
     <div class="plans">
-      <!-- LITE -->
+
+      <!-- STARTER -->
       <div class="plan">
-        <div class="plan-name">Lite</div>
-        <div class="plan-price"><sup>€</sup>199</div>
-        <div class="plan-setup">Setup una tantum + €19,90/mese hosting</div>
+        <div class="plan-name">Starter</div>
+        <div class="plan-price"><sup>€</sup>149</div>
+        <div class="plan-setup">Setup una tantum + €14,90/mese hosting</div>
         <ul class="plan-features">
           <li class="yes">Bot Discord prenotazioni</li>
-          <li class="yes">Bot Telegram prenotazioni</li>
           <li class="yes">API backend centralizzata</li>
-          <li class="yes">Slot sincronizzati</li>
-          <li class="yes">Notifiche staff</li>
+          <li class="yes">Slot sincronizzati multi-staff</li>
+          <li class="yes">Notifiche staff via Discord</li>
+          <li class="yes">Pannello ticket clienti</li>
+          <li class="no">Bot Telegram</li>
           <li class="no">App Mobile admin</li>
-          <li class="no">Bridge Discord ↔ Telegram</li>
+          <li class="no">Push notifications</li>
           <li class="no">WhatsApp Business</li>
-          <li class="no">Push notifications clienti</li>
         </ul>
-        <a href="#contact" class="btn-plan btn-plan-ghost">Inizia con Lite</a>
+        <a href="#contact" class="btn-plan btn-plan-ghost">Inizia con Starter</a>
+      </div>
+
+      <!-- PLUS — App + Discord -->
+      <div class="plan">
+        <div class="plan-name">Plus</div>
+        <div class="plan-price"><sup>€</sup>349</div>
+        <div class="plan-setup">Setup una tantum + €29,90/mese hosting</div>
+        <ul class="plan-features">
+          <li class="yes">Bot Discord prenotazioni</li>
+          <li class="yes">App Mobile admin (iOS + Android)</li>
+          <li class="yes">API backend centralizzata</li>
+          <li class="yes">Slot sincronizzati multi-staff</li>
+          <li class="yes">Push notifications clienti</li>
+          <li class="yes">Pannello ticket + bridge App ↔ Discord</li>
+          <li class="yes">Annunci multicanale</li>
+          <li class="no">Bot Telegram</li>
+          <li class="no">WhatsApp Business</li>
+        </ul>
+        <a href="#contact" class="btn-plan btn-plan-ghost">Inizia con Plus</a>
       </div>
 
       <!-- PRO (featured) -->
       <div class="plan featured">
         <div class="plan-badge">Più scelto</div>
         <div class="plan-name">Pro</div>
-        <div class="plan-price"><sup>€</sup>499</div>
-        <div class="plan-setup">Setup una tantum + €39,90/mese hosting</div>
+        <div class="plan-price"><sup>€</sup>599</div>
+        <div class="plan-setup">Setup una tantum + €44,90/mese hosting</div>
         <ul class="plan-features">
           <li class="yes">Bot Discord prenotazioni</li>
           <li class="yes">Bot Telegram prenotazioni</li>
-          <li class="yes">API backend centralizzata</li>
-          <li class="yes">Slot sincronizzati</li>
-          <li class="yes">Notifiche staff</li>
           <li class="yes">App Mobile admin (iOS + Android)</li>
-          <li class="yes">Bridge Discord ↔ Telegram</li>
-          <li class="soon">WhatsApp Business (presto)</li>
+          <li class="yes">API backend centralizzata</li>
+          <li class="yes">Bridge Discord ↔ Telegram ↔ App</li>
           <li class="yes">Push notifications clienti</li>
+          <li class="yes">Annunci multicanale sincronizzati</li>
+          <li class="yes">Ticket bidirezionale tutti i canali</li>
+          <li class="soon">WhatsApp Business (presto)</li>
         </ul>
         <a href="#contact" class="btn-plan btn-plan-primary">Inizia con Pro</a>
       </div>
 
-      <!-- ELITE -->
-      <div class="plan">
-        <div class="plan-name">Elite</div>
-        <div class="plan-price"><sup>€</sup>899</div>
-        <div class="plan-setup">Setup una tantum + €59,90/mese hosting</div>
+      <!-- ELITE / WHITE LABEL -->
+      <div class="plan" style="border-color: rgba(255,215,0,0.25); background: linear-gradient(160deg, rgba(255,215,0,0.05) 0%, var(--bg) 60%);">
+        <div class="plan-badge" style="background: linear-gradient(90deg, #b8860b, #ffd700);">⭐ White Label</div>
+        <div class="plan-name" style="color: #ffd700;">Elite</div>
+        <div class="plan-price"><sup>€</sup>999</div>
+        <div class="plan-setup">Setup una tantum + €69,90/mese hosting</div>
         <ul class="plan-features">
           <li class="yes">Tutto il piano Pro</li>
           <li class="yes">WhatsApp Business incluso</li>
-          <li class="yes">Branding personalizzato</li>
-          <li class="yes">Dominio custom</li>
-          <li class="yes">Onboarding dedicato</li>
-          <li class="yes">Supporto prioritario</li>
+          <li class="yes" style="color:#ffd700;">Branding completo white label</li>
+          <li class="yes" style="color:#ffd700;">App pubblicata con il tuo nome</li>
+          <li class="yes" style="color:#ffd700;">Dominio custom dedicato</li>
+          <li class="yes">Onboarding e setup dedicato</li>
           <li class="yes">Feature custom su richiesta</li>
-          <li class="yes">Report analytics mensile</li>
+          <li class="yes">Supporto prioritario 7/7</li>
           <li class="yes">SLA uptime 99.9% garantito</li>
         </ul>
-        <a href="#contact" class="btn-plan btn-plan-ghost">Contattaci</a>
+        <a href="#contact" class="btn-plan btn-plan-ghost" style="border-color: rgba(255,215,0,0.4); color: #ffd700;">Contattaci per Elite</a>
       </div>
+
     </div>
+    <p style="text-align:center; margin-top:28px; color:var(--muted); font-size:13px;">
+      Hai bisogno di una combinazione specifica? <a href="#contact" style="color:var(--cyan); text-decoration:none;">Contattaci per un piano su misura →</a>
+    </p>
   </div>
 </section>
 
