@@ -570,6 +570,129 @@
   .btn-plan-ghost { border: 1px solid var(--border); color: var(--white); background: transparent; }
   .btn-plan-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
 
+  /* ── Moduli ── */
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 72px;
+  }
+  .module-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  .module-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); border-color: var(--module-color, var(--cyan)); }
+  .module-emoji { font-size: 36px; margin-bottom: 12px; display: block; }
+  .module-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--white);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .module-price-big {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--module-color, var(--cyan));
+    line-height: 1;
+  }
+  .module-price-big sup { font-size: 18px; font-weight: 400; color: var(--muted); vertical-align: top; margin-top: 6px; display: inline-block; }
+  .module-monthly { font-size: 12px; color: var(--muted); margin: 6px 0 18px; }
+  .module-perks { list-style: none; text-align: left; font-size: 12px; color: var(--muted); display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; }
+  .module-perks li::before { content: '✓ '; color: var(--green); font-weight: 700; }
+  .wl-badge {
+    display: inline-block;
+    background: rgba(0,174,239,0.12);
+    border: 1px solid rgba(0,174,239,0.3);
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--cyan);
+    padding: 3px 10px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  /* ── Bundle ── */
+  .bundles-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 4px;
+    color: var(--cyan); text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .bundles-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(20px, 3vw, 30px);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .bundles-desc { color: var(--muted); font-size: 14px; margin-bottom: 40px; }
+  .bundles-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    align-items: start;
+  }
+  .bundle {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 22px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .bundle:hover { transform: translateY(-5px); box-shadow: 0 16px 50px rgba(0,0,0,0.5); }
+  .bundle.featured {
+    border-color: var(--blue);
+    background: linear-gradient(160deg, rgba(0,87,255,0.08) 0%, var(--bg) 60%);
+    box-shadow: 0 0 40px rgba(0,87,255,0.15);
+  }
+  .bundle-badge {
+    position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+    background: var(--blue); color: #fff;
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    padding: 3px 14px; border-radius: 100px; white-space: nowrap; text-transform: uppercase;
+  }
+  .bundle-channels {
+    display: flex; gap: 8px; justify-content: center; margin-bottom: 16px; font-size: 22px;
+  }
+  .bundle-name {
+    font-family: 'Orbitron', sans-serif; font-size: 11px;
+    letter-spacing: 3px; color: var(--muted); text-align: center;
+    margin-bottom: 10px; text-transform: uppercase;
+  }
+  .bundle-price {
+    font-family: 'Orbitron', sans-serif; font-size: 34px; font-weight: 900;
+    color: var(--white); text-align: center; line-height: 1; margin-bottom: 4px;
+  }
+  .bundle-price sup { font-size: 16px; font-weight: 400; color: var(--muted); vertical-align: top; margin-top: 8px; display: inline-block; }
+  .bundle-monthly { font-size: 12px; color: var(--muted); text-align: center; margin-bottom: 6px; }
+  .bundle-save {
+    display: block; text-align: center;
+    font-size: 11px; font-weight: 700; color: var(--green);
+    margin-bottom: 18px; letter-spacing: 0.5px;
+  }
+  .bundle-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 16px; }
+  .bundle-features { list-style: none; font-size: 12px; color: var(--muted); display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; }
+  .bundle-features li::before { content: '✓ '; color: var(--green); font-weight: 700; }
+
+  @media (max-width: 1100px) {
+    .modules-grid { grid-template-columns: repeat(2, 1fr); }
+    .bundles-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .modules-grid { grid-template-columns: 1fr; }
+    .bundles-grid { grid-template-columns: 1fr; }
+  }
+
   /* ── CTA finale ── */
   .cta-final {
     padding: 120px 60px;
@@ -615,9 +738,6 @@
   .footer-tagline { font-size: 11px; color: var(--muted); letter-spacing: 2px; }
 
   /* ── Responsive ── */
-  @media (max-width: 1100px) {
-    .plans { grid-template-columns: repeat(2, 1fr); }
-  }
   @media (max-width: 768px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
@@ -625,7 +745,6 @@
     .features, .how, .cta-final { padding: 80px 24px; }
     .screenshots { padding: 80px 24px; }
     .pricing { padding: 80px 24px; }
-    .plans { grid-template-columns: 1fr; }
     .steps::before { display: none; }
     footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
   }
@@ -856,96 +975,191 @@
 <!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="pricing-inner">
+
     <div class="pricing-header">
-      <div class="section-label">Piani</div>
-      <h2 class="section-title">Scegli il tuo piano</h2>
-      <p class="pricing-note">Setup una tantum + canone mensile hosting. Nessun costo nascosto.</p>
+      <div class="section-label">Prezzi</div>
+      <h2 class="section-title">Moduli à la carte</h2>
+      <p class="pricing-note">Ogni componente è venduto singolarmente o in bundle. Tutto è <strong style="color:var(--cyan)">white label</strong> di default — branding, colori e nome del cliente.</p>
     </div>
 
-    <div class="plans">
+    <!-- ── MODULI SINGOLI ────────────────────────────────────────── -->
+    <div class="modules-grid">
 
-      <!-- STARTER -->
-      <div class="plan">
-        <div class="plan-name">Starter</div>
-        <div class="plan-price"><sup>€</sup>149</div>
-        <div class="plan-setup">Setup una tantum + €14,90/mese hosting</div>
-        <ul class="plan-features">
-          <li class="yes">Bot Discord prenotazioni</li>
-          <li class="yes">API backend centralizzata</li>
-          <li class="yes">Slot sincronizzati multi-staff</li>
-          <li class="yes">Notifiche staff via Discord</li>
-          <li class="yes">Pannello ticket clienti</li>
-          <li class="no">Bot Telegram</li>
-          <li class="no">App Mobile admin</li>
-          <li class="no">Push notifications</li>
-          <li class="no">WhatsApp Business</li>
+      <!-- App Mobile -->
+      <div class="module-card" style="--module-color: var(--cyan);">
+        <div class="wl-badge">✦ White Label</div>
+        <span class="module-emoji">📱</span>
+        <div class="module-name">App Mobile</div>
+        <div class="module-price-big"><sup>€</sup>249</div>
+        <div class="module-monthly">setup + €19,90/mese</div>
+        <ul class="module-perks">
+          <li>iOS + Android, branding cliente</li>
+          <li>Pannello admin nativo</li>
+          <li>Push notifications</li>
+          <li>Calendario prenotazioni</li>
+          <li>Annunci in-app</li>
+          <li>OTA updates inclusi</li>
         </ul>
-        <a href="#contact" class="btn-plan btn-plan-ghost">Inizia con Starter</a>
+        <a href="#contact" class="btn-plan btn-plan-ghost">Richiedi</a>
       </div>
 
-      <!-- PLUS — App + Discord -->
-      <div class="plan">
-        <div class="plan-name">Plus</div>
-        <div class="plan-price"><sup>€</sup>349</div>
-        <div class="plan-setup">Setup una tantum + €29,90/mese hosting</div>
-        <ul class="plan-features">
-          <li class="yes">Bot Discord prenotazioni</li>
-          <li class="yes">App Mobile admin (iOS + Android)</li>
-          <li class="yes">API backend centralizzata</li>
-          <li class="yes">Slot sincronizzati multi-staff</li>
-          <li class="yes">Push notifications clienti</li>
-          <li class="yes">Pannello ticket + bridge App ↔ Discord</li>
-          <li class="yes">Annunci multicanale</li>
-          <li class="no">Bot Telegram</li>
-          <li class="no">WhatsApp Business</li>
+      <!-- Bot Discord -->
+      <div class="module-card" style="--module-color: var(--discord);">
+        <span class="module-emoji">💬</span>
+        <div class="module-name">Bot Discord</div>
+        <div class="module-price-big" style="color:var(--discord);"><sup>€</sup>149</div>
+        <div class="module-monthly">setup + €14,90/mese</div>
+        <ul class="module-perks">
+          <li>Prenotazioni via menu interattivi</li>
+          <li>Apertura ticket automatica</li>
+          <li>Gestione slot staff</li>
+          <li>Benvenuto nuovi membri</li>
+          <li>Comandi custom</li>
         </ul>
-        <a href="#contact" class="btn-plan btn-plan-ghost">Inizia con Plus</a>
+        <a href="#contact" class="btn-plan btn-plan-ghost">Richiedi</a>
       </div>
 
-      <!-- PRO (featured) -->
-      <div class="plan featured">
-        <div class="plan-badge">Più scelto</div>
-        <div class="plan-name">Pro</div>
-        <div class="plan-price"><sup>€</sup>599</div>
-        <div class="plan-setup">Setup una tantum + €44,90/mese hosting</div>
-        <ul class="plan-features">
-          <li class="yes">Bot Discord prenotazioni</li>
-          <li class="yes">Bot Telegram prenotazioni</li>
-          <li class="yes">App Mobile admin (iOS + Android)</li>
-          <li class="yes">API backend centralizzata</li>
-          <li class="yes">Bridge Discord ↔ Telegram ↔ App</li>
-          <li class="yes">Push notifications clienti</li>
-          <li class="yes">Annunci multicanale sincronizzati</li>
-          <li class="yes">Ticket bidirezionale tutti i canali</li>
-          <li class="soon">WhatsApp Business (presto)</li>
+      <!-- Bot Telegram -->
+      <div class="module-card" style="--module-color: var(--telegram);">
+        <span class="module-emoji">✈️</span>
+        <div class="module-name">Bot Telegram</div>
+        <div class="module-price-big" style="color:var(--telegram);"><sup>€</sup>149</div>
+        <div class="module-monthly">setup + €14,90/mese</div>
+        <ul class="module-perks">
+          <li>Prenotazioni inline</li>
+          <li>Notifiche clienti automatiche</li>
+          <li>Pannello staff con approvazione</li>
+          <li>Topic per ogni prenotazione</li>
+          <li>Comandi custom</li>
         </ul>
-        <a href="#contact" class="btn-plan btn-plan-primary">Inizia con Pro</a>
+        <a href="#contact" class="btn-plan btn-plan-ghost">Richiedi</a>
       </div>
 
-      <!-- ELITE / WHITE LABEL -->
-      <div class="plan" style="border-color: rgba(255,215,0,0.25); background: linear-gradient(160deg, rgba(255,215,0,0.05) 0%, var(--bg) 60%);">
-        <div class="plan-badge" style="background: linear-gradient(90deg, #b8860b, #ffd700);">⭐ White Label</div>
-        <div class="plan-name" style="color: #ffd700;">Elite</div>
-        <div class="plan-price"><sup>€</sup>999</div>
-        <div class="plan-setup">Setup una tantum + €69,90/mese hosting</div>
-        <ul class="plan-features">
-          <li class="yes">Tutto il piano Pro</li>
-          <li class="yes">WhatsApp Business incluso</li>
-          <li class="yes" style="color:#ffd700;">Branding completo white label</li>
-          <li class="yes" style="color:#ffd700;">App pubblicata con il tuo nome</li>
-          <li class="yes" style="color:#ffd700;">Dominio custom dedicato</li>
-          <li class="yes">Onboarding e setup dedicato</li>
-          <li class="yes">Feature custom su richiesta</li>
-          <li class="yes">Supporto prioritario 7/7</li>
-          <li class="yes">SLA uptime 99.9% garantito</li>
+      <!-- WhatsApp Business -->
+      <div class="module-card" style="--module-color: var(--whatsapp);">
+        <span class="module-emoji">💚</span>
+        <div class="module-name">WhatsApp Business</div>
+        <div class="module-price-big" style="color:var(--whatsapp);"><sup>€</sup>249</div>
+        <div class="module-monthly">setup + €24,90/mese</div>
+        <ul class="module-perks">
+          <li>Prenotazioni via chat</li>
+          <li>Conferme e promemoria automatici</li>
+          <li>Cloud API ufficiale Meta</li>
+          <li>Numero dedicato richiesto</li>
         </ul>
-        <a href="#contact" class="btn-plan btn-plan-ghost" style="border-color: rgba(255,215,0,0.4); color: #ffd700;">Contattaci per Elite</a>
+        <a href="#contact" class="btn-plan btn-plan-ghost">Richiedi</a>
       </div>
 
     </div>
-    <p style="text-align:center; margin-top:28px; color:var(--muted); font-size:13px;">
-      Hai bisogno di una combinazione specifica? <a href="#contact" style="color:var(--cyan); text-decoration:none;">Contattaci per un piano su misura →</a>
+
+    <!-- ── BUNDLE ─────────────────────────────────────────────────── -->
+    <div class="bundles-label">Bundle</div>
+    <h3 class="bundles-title">Combinazioni pronte — risparmio garantito</h3>
+    <p class="bundles-desc">Più moduli combini, più risparmi sul setup. Il canone mensile scala proporzionalmente.</p>
+
+    <div class="bundles-grid">
+
+      <!-- Solo App -->
+      <div class="bundle">
+        <div class="bundle-channels">📱</div>
+        <div class="bundle-name">Solo App</div>
+        <div class="bundle-price"><sup>€</sup>249</div>
+        <div class="bundle-monthly">+ €19,90/mese</div>
+        <span class="bundle-save">— prezzo modulo singolo</span>
+        <hr class="bundle-divider"/>
+        <ul class="bundle-features">
+          <li>App Mobile white label</li>
+          <li>Push notifications</li>
+          <li>Pannello admin</li>
+        </ul>
+        <a href="#contact" class="btn-plan btn-plan-ghost">Inizia</a>
+      </div>
+
+      <!-- App + Discord -->
+      <div class="bundle">
+        <div class="bundle-channels">📱 💬</div>
+        <div class="bundle-name">App + Discord</div>
+        <div class="bundle-price"><sup>€</sup>329</div>
+        <div class="bundle-monthly">+ €27,90/mese</div>
+        <span class="bundle-save">Risparmio €69 sul setup</span>
+        <hr class="bundle-divider"/>
+        <ul class="bundle-features">
+          <li>App Mobile white label</li>
+          <li>Bot Discord prenotazioni</li>
+          <li>Bridge App ↔ Discord</li>
+          <li>Push notifications</li>
+        </ul>
+        <a href="#contact" class="btn-plan btn-plan-ghost">Inizia</a>
+      </div>
+
+      <!-- App + Telegram -->
+      <div class="bundle">
+        <div class="bundle-channels">📱 ✈️</div>
+        <div class="bundle-name">App + Telegram</div>
+        <div class="bundle-price"><sup>€</sup>329</div>
+        <div class="bundle-monthly">+ €27,90/mese</div>
+        <span class="bundle-save">Risparmio €69 sul setup</span>
+        <hr class="bundle-divider"/>
+        <ul class="bundle-features">
+          <li>App Mobile white label</li>
+          <li>Bot Telegram prenotazioni</li>
+          <li>Bridge App ↔ Telegram</li>
+          <li>Push notifications</li>
+        </ul>
+        <a href="#contact" class="btn-plan btn-plan-ghost">Inizia</a>
+      </div>
+
+      <!-- App + Discord + Telegram (featured) -->
+      <div class="bundle featured">
+        <div class="bundle-badge">Più scelto</div>
+        <div class="bundle-channels">📱 💬 ✈️</div>
+        <div class="bundle-name">Full Social</div>
+        <div class="bundle-price"><sup>€</sup>449</div>
+        <div class="bundle-monthly">+ €37,90/mese</div>
+        <span class="bundle-save">Risparmio €148 sul setup</span>
+        <hr class="bundle-divider"/>
+        <ul class="bundle-features">
+          <li>App Mobile white label</li>
+          <li>Bot Discord prenotazioni</li>
+          <li>Bot Telegram prenotazioni</li>
+          <li>Bridge Discord ↔ Telegram ↔ App</li>
+          <li>Annunci multicanale sincronizzati</li>
+          <li>Ticket bidirezionale</li>
+          <li>Push notifications</li>
+        </ul>
+        <a href="#contact" class="btn-plan btn-plan-primary">Inizia</a>
+      </div>
+
+      <!-- Stack Completo -->
+      <div class="bundle" style="border-color:rgba(255,215,0,0.3); background:linear-gradient(160deg,rgba(255,215,0,0.05) 0%,var(--bg) 60%);">
+        <div class="bundle-badge" style="background:linear-gradient(90deg,#b8860b,#ffd700);">⭐ Full Stack</div>
+        <div class="bundle-channels">📱 💬 ✈️ 💚</div>
+        <div class="bundle-name" style="color:#ffd700;">Tutto Incluso</div>
+        <div class="bundle-price"><sup>€</sup>699</div>
+        <div class="bundle-monthly">+ €54,90/mese</div>
+        <span class="bundle-save">Risparmio €196 sul setup</span>
+        <hr class="bundle-divider"/>
+        <ul class="bundle-features">
+          <li>App Mobile white label</li>
+          <li>Bot Discord + Telegram</li>
+          <li>WhatsApp Business</li>
+          <li>Bridge tutti i canali</li>
+          <li>Annunci multicanale</li>
+          <li>Ticket bidirezionale</li>
+          <li>Push notifications</li>
+          <li>Dominio custom</li>
+          <li>Supporto prioritario 7/7</li>
+        </ul>
+        <a href="#contact" class="btn-plan btn-plan-ghost" style="border-color:rgba(255,215,0,0.4);color:#ffd700;">Contattaci</a>
+      </div>
+
+    </div>
+
+    <p style="text-align:center; margin-top:32px; color:var(--muted); font-size:13px;">
+      Vuoi combinare moduli in modo diverso?
+      <a href="#contact" style="color:var(--cyan); text-decoration:none;">Scrivici per un preventivo su misura →</a>
     </p>
+
   </div>
 </section>
 
