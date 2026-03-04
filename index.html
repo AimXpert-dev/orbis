@@ -616,15 +616,44 @@
 
   /* ── Responsive ── */
   @media (max-width: 768px) {
-    nav { padding: 16px 24px; }
+    nav { padding: 14px 20px; }
     .nav-links { display: none; }
-    .stats { gap: 40px; flex-wrap: wrap; padding: 40px 24px; }
-    .features, .how, .cta-final { padding: 80px 24px; }
-    .screenshots { padding: 80px 24px; }
-    .pricing { padding: 80px 24px; }
-    .plans { grid-template-columns: 1fr; }
+    .nav-cta { padding: 8px 16px; font-size: 13px; }
+
+    .hero { padding: 100px 20px 60px; }
+    .hero h1 { letter-spacing: 4px; }
+    .hero-sub { letter-spacing: 2px; font-size: 11px; }
+    .hero-desc { font-size: 15px; }
+    .hero-ctas { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; }
+    .btn-primary, .btn-ghost { padding: 14px 24px; text-align: center; }
+
+    .orbit-diagram { width: 200px; height: 200px; margin-top: 48px; }
+    .ring-1 { width: 196px; height: 196px; }
+    .ring-2 { width: 130px; height: 130px; }
+
+    .stats { gap: 20px; flex-wrap: wrap; padding: 32px 20px; justify-content: space-around; }
+    .stat-num { font-size: 26px; }
+
+    .features { padding: 60px 20px; }
+    .features-grid { grid-template-columns: 1fr; }
+
+    .screenshots { padding: 60px 20px; }
+    .screen-tabs { overflow-x: auto; flex-wrap: nowrap; }
+    .screen-panel.active { grid-template-columns: 1fr; }
+
+    .how { padding: 60px 20px; }
+    .steps { grid-template-columns: 1fr; gap: 24px; }
     .steps::before { display: none; }
-    footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+
+    .pricing { padding: 60px 20px; }
+    .plans { grid-template-columns: 1fr; }
+    .plan { padding: 28px 20px; }
+
+    .cta-final { padding: 60px 20px; }
+    .cta-final h2 { letter-spacing: 2px; }
+
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 20px; }
+    .footer-tagline { display: none; }
   }
 </style>
 </head>
@@ -1015,6 +1044,10 @@
     if (e.key === 'ArrowRight')  lightboxNav(1);
     if (e.key === 'ArrowLeft')   lightboxNav(-1);
   });
+
+  // Forza scroll in cima all'apertura della pagina
+  history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
 </script>
 </body>
 </html>
