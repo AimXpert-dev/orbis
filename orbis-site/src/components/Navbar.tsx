@@ -22,54 +22,59 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full max-w-[100vw] overflow-x-hidden z-50 flex items-center justify-between px-4 md:px-16 py-4 transition-all duration-300 border-b ${
-        scrolled
-          ? "bg-[#080B14]/95 backdrop-blur-xl border-[var(--color-border)]"
-          : "bg-transparent border-transparent"
-      }`}
-    >
-      <Link
-        href="/"
-        className="font-[family-name:var(--font-display)] text-base md:text-[22px] font-black tracking-[2px] md:tracking-[6px] text-[var(--color-white)] no-underline shrink-0"
+    <>
+      <nav
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b ${
+          scrolled
+            ? "bg-[#080B14]/95 backdrop-blur-xl border-[var(--color-border)]"
+            : "bg-transparent border-transparent"
+        }`}
       >
-        ORBIS<span className="text-[var(--color-cyan)]">.</span>
-      </Link>
+        <div className="flex items-center justify-between w-full px-4 md:px-16 py-4">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="font-[family-name:var(--font-display)] text-lg md:text-[22px] font-black tracking-[3px] md:tracking-[6px] text-[var(--color-white)] no-underline"
+          >
+            ORBIS<span className="text-[var(--color-cyan)]">.</span>
+          </Link>
 
-      {/* Desktop links */}
-      <ul className="hidden md:flex gap-7 list-none">
-        {links.map(([label, href]) => (
-          <li key={href}>
-            <Link
-              href={href}
-              className="text-[var(--color-muted)] text-sm font-medium tracking-wide hover:text-[var(--color-white)] transition-colors no-underline"
-            >
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+          {/* Desktop links */}
+          <ul className="hidden md:flex gap-7 list-none">
+            {links.map(([label, href]) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="text-[var(--color-muted)] text-sm font-medium tracking-wide hover:text-[var(--color-white)] transition-colors no-underline"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-      {/* CTA */}
-      <Link
-        href="/contatti"
-        className="hidden md:inline-block bg-[var(--color-blue)] text-white px-6 py-2.5 rounded-lg text-sm font-semibold no-underline hover:bg-[#0045CC] hover:shadow-[0_0_20px_rgba(0,87,255,0.4)] transition-all"
-      >
-        Contattaci &rarr;
-      </Link>
+          {/* Desktop CTA */}
+          <Link
+            href="/contatti"
+            className="hidden md:inline-block bg-[var(--color-blue)] text-white px-6 py-2.5 rounded-lg text-sm font-semibold no-underline hover:bg-[#0045CC] hover:shadow-[0_0_20px_rgba(0,87,255,0.4)] transition-all"
+          >
+            Contattaci &rarr;
+          </Link>
 
-      {/* Mobile burger */}
-      <button
-        className="md:hidden text-[var(--color-white)] text-2xl shrink-0 p-2"
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Menu"
-      >
-        {menuOpen ? "\u2715" : "\u2630"}
-      </button>
+          {/* Mobile burger */}
+          <button
+            className="md:hidden text-[var(--color-white)] text-2xl p-2 -mr-2"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menu"
+          >
+            {menuOpen ? "\u2715" : "\u2630"}
+          </button>
+        </div>
+      </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - outside nav, full width overlay */}
       {menuOpen && (
-        <div className="fixed top-[57px] left-0 right-0 bg-[#080B14]/98 backdrop-blur-xl border-b border-[var(--color-border)] p-6 flex flex-col gap-4 md:hidden">
+        <div className="fixed inset-x-0 top-[65px] z-50 bg-[#080B14]/98 backdrop-blur-xl border-b border-[var(--color-border)] p-6 flex flex-col gap-4 md:hidden">
           {links.map(([label, href]) => (
             <Link
               key={href}
@@ -89,6 +94,6 @@ export default function Navbar() {
           </Link>
         </div>
       )}
-    </nav>
+    </>
   );
 }
