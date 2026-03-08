@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ChannelIcon from "@/components/ChannelIcon";
 
 export const metadata: Metadata = {
   title: "Bot Telegram — ORBIS",
@@ -88,7 +89,7 @@ export default function TelegramPage() {
 
           <div className="mt-16 flex justify-center">
             <div className="w-[120px] h-[120px] rounded-full bg-[rgba(42,171,238,0.06)] border border-[rgba(42,171,238,0.15)] flex items-center justify-center shadow-[0_0_50px_rgba(42,171,238,0.15)]">
-              <span className="text-6xl">✈️</span>
+              <ChannelIcon name="telegram" size={64} />
             </div>
           </div>
         </div>

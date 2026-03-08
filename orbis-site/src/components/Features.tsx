@@ -1,37 +1,39 @@
+import ChannelIcon from "./ChannelIcon";
+
 const features = [
   {
-    icon: "💬",
+    icon: "discord",
     title: "Bot Discord",
     desc: "Prenotazioni via menu interattivi, apertura ticket, gestione staff, bridge verso Telegram. Tutto automatizzato senza lasciare Discord.",
     color: "var(--color-discord)",
   },
   {
-    icon: "✈️",
+    icon: "telegram",
     title: "Bot Telegram",
     desc: "Prenotazioni inline, notifiche clienti, pannello staff con approvazione in un click. I messaggi del ticket arrivano anche su Discord.",
     color: "var(--color-telegram)",
   },
   {
-    icon: "📱",
+    icon: "app",
     title: "App Mobile",
     desc: "Pannello admin nativo per iOS e Android. Gestisci prenotazioni, conferma o annulla, vedi il calendario in tempo reale.",
     color: "var(--color-cyan)",
   },
   {
-    icon: "💚",
+    icon: "whatsapp",
     title: "WhatsApp Business",
     desc: "Prenotazioni e conferme via WhatsApp Cloud API. I clienti ricevono messaggi automatici sul canale che usano ogni giorno.",
     color: "var(--color-whatsapp)",
     soon: true,
   },
   {
-    icon: "⚡",
+    icon: "api",
     title: "API Centralizzata",
     desc: "Un backend FastAPI che sincronizza tutti i canali. Slot condivisi, nessuna doppia prenotazione, dati sempre consistenti.",
     color: "var(--color-blue)",
   },
   {
-    icon: "🔔",
+    icon: "push",
     title: "Push Notifications",
     desc: "Notifiche push in tempo reale per ogni evento: nuova prenotazione, conferma, annullamento. Staff sempre aggiornato.",
     color: "var(--color-orange)",
@@ -77,7 +79,7 @@ export default function Features() {
                 borderColor: `color-mix(in srgb, ${f.color} 30%, transparent)`,
               }}
             >
-              {f.icon}
+              {f.icon === "api" ? "⚡" : f.icon === "push" ? "🔔" : <ChannelIcon name={f.icon} size={26} />}
             </div>
             <h3 className="text-[17px] font-bold mb-2.5">
               {f.title}

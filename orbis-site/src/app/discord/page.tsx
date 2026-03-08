@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ChannelIcon from "@/components/ChannelIcon";
 
 export const metadata: Metadata = {
   title: "Bot Discord — ORBIS",
@@ -93,7 +94,7 @@ export default function DiscordPage() {
           {/* Floating emoji */}
           <div className="hidden lg:flex absolute right-10 top-1/2 -translate-y-1/2 w-[200px] h-[200px] items-center justify-center">
             <div className="w-[160px] h-[160px] rounded-full bg-[rgba(88,101,242,0.08)] border border-[rgba(88,101,242,0.2)] flex items-center justify-center shadow-[0_0_60px_rgba(88,101,242,0.2)]">
-              <span className="text-7xl">💬</span>
+              <ChannelIcon name="discord" size={72} />
             </div>
           </div>
         </div>

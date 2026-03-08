@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ChannelIcon from "@/components/ChannelIcon";
 
 export const metadata: Metadata = {
   title: "App Mobile — ORBIS",
@@ -92,7 +93,7 @@ export default function AppMobilePage() {
             <div className="relative w-[220px] h-[420px] rounded-[36px] border-2 border-[rgba(0,174,239,0.2)] bg-[var(--color-bg2)] shadow-[0_0_80px_rgba(0,174,239,0.1)] overflow-hidden">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[120px] h-[24px] bg-[var(--color-bg)] rounded-b-2xl" />
               <div className="w-full h-full flex flex-col items-center justify-center gap-4 p-6">
-                <span className="text-5xl">📱</span>
+                <ChannelIcon name="app" size={52} />
                 <div className="font-[family-name:var(--font-display)] text-xs tracking-[3px] text-[var(--color-cyan)] uppercase">
                   Your App
                 </div>

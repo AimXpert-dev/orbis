@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ChannelIcon from "@/components/ChannelIcon";
 
 export const metadata: Metadata = {
   title: "Funzionalita — ORBIS",
@@ -10,28 +11,28 @@ export const metadata: Metadata = {
 
 const channels = [
   {
-    icon: "💬",
+    icon: "discord",
     name: "Bot Discord",
     href: "/discord",
     color: "#5865F2",
     highlights: ["Prenotazioni interattive", "Ticket automatici", "Gestione staff", "Bridge bidirezionale", "Annunci multicanale"],
   },
   {
-    icon: "✈️",
+    icon: "telegram",
     name: "Bot Telegram",
     href: "/telegram",
     color: "#2AABEE",
     highlights: ["Prenotazioni inline", "Notifiche automatiche", "Pannello staff", "Topic dedicati", "Bridge con Discord e App"],
   },
   {
-    icon: "📱",
+    icon: "app",
     name: "App Mobile",
     href: "/app-mobile",
     color: "#00AEEF",
     highlights: ["White label completa", "Pannello admin nativo", "Push notifications", "Calendario prenotazioni", "OTA updates"],
   },
   {
-    icon: "💚",
+    icon: "whatsapp",
     name: "WhatsApp",
     color: "#25D366",
     highlights: ["Prenotazioni via chat", "Conferme automatiche", "Cloud API ufficiale", "Bridge tutti i canali"],
@@ -106,7 +107,7 @@ export default function FunzionalitaPage() {
                 />
 
                 <div className="flex items-center gap-4 mb-5">
-                  <span className="text-4xl">{ch.icon}</span>
+                  <span className="text-4xl"><ChannelIcon name={ch.icon} size={36} /></span>
                   <div>
                     <h3 className="text-lg font-bold" style={{ color: ch.color }}>
                       {ch.name}

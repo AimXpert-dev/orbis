@@ -2,25 +2,26 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import Footer from "@/components/Footer";
+import ChannelIcon from "@/components/ChannelIcon";
 import Link from "next/link";
 
 const channels = [
   {
-    icon: "💬",
+    icon: "discord",
     name: "Discord",
     href: "/discord",
     color: "#5865F2",
     desc: "Bot prenotazioni, ticket automatici, gestione staff. Il tuo server Discord diventa un centro operativo.",
   },
   {
-    icon: "✈️",
+    icon: "telegram",
     name: "Telegram",
     href: "/telegram",
     color: "#2AABEE",
     desc: "Prenotazioni inline, notifiche clienti, pannello staff. Tutto dal messenger piu veloce.",
   },
   {
-    icon: "📱",
+    icon: "app",
     name: "App Mobile",
     href: "/app-mobile",
     color: "#00AEEF",
@@ -74,7 +75,7 @@ export default function Home() {
                 style={{ background: `radial-gradient(circle at 50% 0%, ${ch.color}15, transparent 70%)` }}
               />
 
-              <span className="text-5xl block mb-5 relative">{ch.icon}</span>
+              <span className="flex justify-center mb-5 relative"><ChannelIcon name={ch.icon} size={48} /></span>
               <div
                 className="font-[family-name:var(--font-display)] text-lg font-bold tracking-[4px] uppercase mb-4 relative"
                 style={{ color: ch.color }}

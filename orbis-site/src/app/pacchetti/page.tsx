@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ChannelIcon from "@/components/ChannelIcon";
 
 export const metadata: Metadata = {
   title: "Pacchetti — ORBIS",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 const bundles = [
   {
-    channels: ["📱"],
+    channels: ["app"],
     name: "Solo App",
     price: "249",
     monthly: "+ \u20AC19,90/mese",
@@ -23,7 +24,7 @@ const bundles = [
     ],
   },
   {
-    channels: ["📱", "💬"],
+    channels: ["app", "discord"],
     name: "App + Discord",
     price: "329",
     monthly: "+ \u20AC27,90/mese",
@@ -38,7 +39,7 @@ const bundles = [
     ],
   },
   {
-    channels: ["📱", "✈️"],
+    channels: ["app", "telegram"],
     name: "App + Telegram",
     price: "329",
     monthly: "+ \u20AC27,90/mese",
@@ -53,7 +54,7 @@ const bundles = [
     ],
   },
   {
-    channels: ["📱", "💬", "✈️"],
+    channels: ["app", "discord", "telegram"],
     name: "Full Social",
     price: "449",
     monthly: "+ \u20AC37,90/mese",
@@ -72,7 +73,7 @@ const bundles = [
     ],
   },
   {
-    channels: ["📱", "💬", "✈️", "💚"],
+    channels: ["app", "discord", "telegram", "whatsapp"],
     name: "Tutto Incluso",
     price: "699",
     monthly: "+ \u20AC54,90/mese",
@@ -165,9 +166,9 @@ export default function PacchettiPage() {
                   </div>
                 )}
 
-                <div className="flex gap-2 justify-center mb-4 text-[22px]">
+                <div className="flex gap-2 justify-center mb-4">
                   {b.channels.map((c, i) => (
-                    <span key={i}>{c}</span>
+                    <span key={i}><ChannelIcon name={c} size={24} /></span>
                   ))}
                 </div>
                 <div

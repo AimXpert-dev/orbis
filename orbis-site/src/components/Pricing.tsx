@@ -1,11 +1,12 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import ChannelIcon from "./ChannelIcon";
 
 /* ── Moduli singoli ── */
 const modules = [
   {
-    icon: "📱",
+    icon: "app",
     name: "App Mobile",
     price: "249",
     monthly: "setup + €19,90/mese",
@@ -22,7 +23,7 @@ const modules = [
     ],
   },
   {
-    icon: "💬",
+    icon: "discord",
     name: "Bot Discord",
     price: "149",
     monthly: "setup + €14,90/mese",
@@ -37,7 +38,7 @@ const modules = [
     ],
   },
   {
-    icon: "✈️",
+    icon: "telegram",
     name: "Bot Telegram",
     price: "149",
     monthly: "setup + €14,90/mese",
@@ -52,7 +53,7 @@ const modules = [
     ],
   },
   {
-    icon: "💚",
+    icon: "whatsapp",
     name: "WhatsApp Business",
     price: "249",
     monthly: "setup + €24,90/mese",
@@ -71,7 +72,7 @@ const modules = [
 /* ── Bundle ── */
 const bundles = [
   {
-    channels: ["📱"],
+    channels: ["app"],
     name: "Solo App",
     price: "249",
     monthly: "+ €19,90/mese",
@@ -84,7 +85,7 @@ const bundles = [
     ],
   },
   {
-    channels: ["📱", "💬"],
+    channels: ["app", "discord"],
     name: "App + Discord",
     price: "329",
     monthly: "+ €27,90/mese",
@@ -99,7 +100,7 @@ const bundles = [
     ],
   },
   {
-    channels: ["📱", "✈️"],
+    channels: ["app", "telegram"],
     name: "App + Telegram",
     price: "329",
     monthly: "+ €27,90/mese",
@@ -114,7 +115,7 @@ const bundles = [
     ],
   },
   {
-    channels: ["📱", "💬", "✈️"],
+    channels: ["app", "discord", "telegram"],
     name: "Full Social",
     price: "449",
     monthly: "+ €37,90/mese",
@@ -133,7 +134,7 @@ const bundles = [
     ],
   },
   {
-    channels: ["📱", "💬", "✈️", "💚"],
+    channels: ["app", "discord", "telegram", "whatsapp"],
     name: "Tutto Incluso",
     price: "699",
     monthly: "+ €54,90/mese",
@@ -205,7 +206,7 @@ export default function Pricing() {
                   White Label
                 </div>
               )}
-              <span className="text-4xl mb-3 block text-center">{m.icon}</span>
+              <span className="flex justify-center mb-3"><ChannelIcon name={m.icon} size={40} /></span>
               <div className="font-[family-name:var(--font-display)] text-xs tracking-[3px] text-[var(--color-white)] text-center uppercase mb-4">
                 {m.name}
               </div>
@@ -284,9 +285,9 @@ export default function Pricing() {
                 </div>
               )}
 
-              <div className="flex gap-2 justify-center mb-4 text-[22px]">
+              <div className="flex gap-2 justify-center mb-4">
                 {b.channels.map((c, i) => (
-                  <span key={i}>{c}</span>
+                  <span key={i}><ChannelIcon name={c} size={24} /></span>
                 ))}
               </div>
               <div
