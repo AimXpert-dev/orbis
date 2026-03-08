@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const links = [
+  ["Home", "/"],
   ["Discord", "/discord"],
   ["Telegram", "/telegram"],
   ["App Mobile", "/app-mobile"],
@@ -22,7 +23,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 w-full z-50 flex items-center justify-between px-4 md:px-16 py-4 transition-all duration-300 border-b ${
+      className={`fixed top-0 left-0 w-full max-w-[100vw] overflow-x-hidden z-50 flex items-center justify-between px-4 md:px-16 py-4 transition-all duration-300 border-b ${
         scrolled
           ? "bg-[#080B14]/95 backdrop-blur-xl border-[var(--color-border)]"
           : "bg-transparent border-transparent"
@@ -30,7 +31,7 @@ export default function Navbar() {
     >
       <Link
         href="/"
-        className="font-[family-name:var(--font-display)] text-lg md:text-[22px] font-black tracking-[3px] md:tracking-[6px] text-[var(--color-white)] no-underline shrink-0"
+        className="font-[family-name:var(--font-display)] text-base md:text-[22px] font-black tracking-[2px] md:tracking-[6px] text-[var(--color-white)] no-underline shrink-0"
       >
         ORBIS<span className="text-[var(--color-cyan)]">.</span>
       </Link>
@@ -59,15 +60,16 @@ export default function Navbar() {
 
       {/* Mobile burger */}
       <button
-        className="md:hidden text-[var(--color-white)] text-2xl shrink-0"
+        className="md:hidden text-[var(--color-white)] text-2xl shrink-0 p-2"
         onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Menu"
       >
         {menuOpen ? "\u2715" : "\u2630"}
       </button>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-[#080B14]/98 backdrop-blur-xl border-b border-[var(--color-border)] p-6 flex flex-col gap-4 md:hidden">
+        <div className="fixed top-[57px] left-0 right-0 bg-[#080B14]/98 backdrop-blur-xl border-b border-[var(--color-border)] p-6 flex flex-col gap-4 md:hidden">
           {links.map(([label, href]) => (
             <Link
               key={href}
