@@ -64,7 +64,7 @@ export default function SistemaPage() {
 
         <h1 className="font-[family-name:var(--font-display)] text-[clamp(36px,6vw,72px)] font-black tracking-[8px] leading-[1.05] mb-3 relative">
           <span className="bg-gradient-to-br from-white via-[var(--color-cyan)] to-[var(--color-blue)] bg-clip-text text-transparent">
-            ORBIS SISTEMA
+            ORBIS HUB
           </span>
         </h1>
         <p className="font-[family-name:var(--font-display)] text-[clamp(11px,1.5vw,14px)] tracking-[5px] text-[var(--color-muted)] uppercase mb-8 relative">
