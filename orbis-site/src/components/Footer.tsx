@@ -27,8 +27,8 @@ export default function Footer() {
             <ul className="flex flex-col gap-2.5">
               {[
                 { label: "Home", href: "/" },
-                { label: "Sistema Orbis", href: "/sistema" },
-                { label: "Gestionale Orbis", href: "/gestionale" },
+                { label: "Orbis Hub", href: "/sistema" },
+                { label: "Orbis Repair", href: "/gestionale" },
                 { label: "Contatti", href: "/contatti" },
                 { label: "Termini e Condizioni", href: "/termini" },
               ].map((l) => (

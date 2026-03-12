@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Gestionale Orbis — Gestionale Riparazioni",
+  title: "Orbis Repair — Gestionale Riparazioni",
   description:
     "Gestisci riparazioni, clienti, magazzino e documenti con tracking pubblico, notifiche automatiche e dashboard in tempo reale.",
 };
@@ -134,7 +134,7 @@ export default function GestionalePage() {
 
             <div className="inline-flex items-center gap-2.5 bg-[rgba(124,58,237,0.1)] border border-[rgba(124,58,237,0.25)] rounded-full px-4 py-1.5 text-[11px] font-bold tracking-[2px] text-[#A78BFA] uppercase mb-8">
               <span className="w-2 h-2 rounded-full bg-[#A78BFA] animate-pulse" />
-              Gestionale Orbis
+              Orbis Repair
             </div>
 
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(32px,5vw,60px)] font-black tracking-[4px] leading-[1.1] mb-6">
@@ -171,7 +171,7 @@ export default function GestionalePage() {
               <div className="flex items-center gap-2 mb-5">
                 <div className="w-2.5 h-2.5 rounded-full bg-[rgba(124,58,237,0.4)]" />
                 <div className="flex-1 h-2 bg-[rgba(124,58,237,0.1)] rounded-full" />
-                <div className="text-[10px] text-[var(--color-muted)] font-[family-name:var(--font-display)] tracking-[2px]">ORBIS GESTIONALE</div>
+                <div className="text-[10px] text-[var(--color-muted)] font-[family-name:var(--font-display)] tracking-[2px]">ORBIS REPAIR</div>
               </div>
 
               {/* Stats row */}
@@ -278,10 +278,10 @@ export default function GestionalePage() {
                 Integrazione
               </div>
               <h2 className="font-[family-name:var(--font-display)] text-[clamp(22px,3.5vw,36px)] font-bold tracking-[3px] mb-5">
-                Connesso con Sistema Orbis
+                Connesso con Orbis Hub
               </h2>
               <p className="text-[var(--color-muted)] text-base leading-relaxed mb-6">
-                Il Gestionale si integra con Sistema Orbis. I clienti si sincronizzano,
+                Orbis Repair si integra con Orbis Hub. I clienti si sincronizzano,
                 le notifiche partono su tutti i canali e hai una visione completa
                 del tuo business.
               </p>
@@ -320,7 +320,7 @@ export default function GestionalePage() {
 
                 {/* Gestionale box */}
                 <div className="bg-[var(--color-bg)] border border-[rgba(124,58,237,0.3)] rounded-2xl p-5 w-[200px] shadow-[0_0_30px_rgba(124,58,237,0.1)]">
-                  <div className="text-[11px] font-bold tracking-[2px] text-[#A78BFA] uppercase mb-2">Gestionale</div>
+                  <div className="text-[11px] font-bold tracking-[2px] text-[#A78BFA] uppercase mb-2">Repair</div>
                   <div className="text-[13px] text-[var(--color-muted)]">Riparazioni, clienti, magazzino</div>
                 </div>
               </div>
@@ -334,7 +334,7 @@ export default function GestionalePage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(124,58,237,0.07)_0%,transparent_70%)] pointer-events-none" />
         <div className="relative max-w-[600px] mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-[clamp(28px,5vw,48px)] font-black tracking-[4px] mb-5">
-            Prova Gestionale Orbis
+            Prova Orbis Repair
           </h2>
           <p className="text-[var(--color-muted)] text-[17px] mb-10 max-w-[460px] mx-auto">
             Richiedi una demo gratuita. Ti mostriamo come funziona

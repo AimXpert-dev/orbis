@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import ChannelIcon from "@/components/ChannelIcon";
 
 export const metadata: Metadata = {
-  title: "Bot Telegram — Sistema Orbis",
+  title: "Bot Telegram — Orbis Hub",
   description: "Prenotazioni inline, notifiche automatiche e pannello staff — tutto dentro Telegram.",
 };
 

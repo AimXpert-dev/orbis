@@ -67,11 +67,11 @@ export default function TerminiPage() {
               <ul className="space-y-2 ml-4">
                 <li className="flex items-start gap-2.5">
                   <span className="text-[var(--color-cyan)] font-bold mt-0.5">·</span>
-                  <span><strong className="text-[var(--color-white)]">Sistema Orbis:</strong> piattaforma per la gestione di prenotazioni e comunicazioni multicanale (Discord, Telegram, App Mobile, WhatsApp).</span>
+                  <span><strong className="text-[var(--color-white)]">Orbis Hub:</strong> piattaforma per la gestione di prenotazioni e comunicazioni multicanale (Discord, Telegram, App Mobile, WhatsApp).</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-[var(--color-cyan)] font-bold mt-0.5">·</span>
-                  <span><strong className="text-[var(--color-white)]">Gestionale Orbis:</strong> software gestionale per centri riparazione con workflow, anagrafica clienti, magazzino e tracking.</span>
+                  <span><strong className="text-[var(--color-white)]">Orbis Repair:</strong> software gestionale per centri riparazione con workflow, anagrafica clienti, magazzino e tracking.</span>
                 </li>
               </ul>
               <p className="mt-4">

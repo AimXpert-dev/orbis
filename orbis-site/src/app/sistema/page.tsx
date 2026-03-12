@@ -5,7 +5,7 @@ import ChannelIcon from "@/components/ChannelIcon";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Sistema Orbis — Prenotazioni e Comunicazioni Multicanale",
+  title: "Orbis Hub — Prenotazioni e Comunicazioni Multicanale",
   description:
     "Gestisci prenotazioni, clienti e comunicazioni su Discord, Telegram, App Mobile e WhatsApp — tutto sincronizzato in tempo reale da un unico centro di controllo.",
 };

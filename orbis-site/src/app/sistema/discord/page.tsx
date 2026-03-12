@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import ChannelIcon from "@/components/ChannelIcon";
 
 export const metadata: Metadata = {
-  title: "Bot Discord — Sistema Orbis",
+  title: "Bot Discord — Orbis Hub",
   description: "Prenotazioni, ticket e gestione staff direttamente dal tuo server Discord. Tutto automatizzato.",
 };
 

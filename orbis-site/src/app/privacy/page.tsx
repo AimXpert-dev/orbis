@@ -75,7 +75,7 @@ export default function PrivacyPage() {
               </h2>
               <p className="mb-4">I dati personali sono trattati per le seguenti finalità:</p>
               <ul className="space-y-2 ml-4">
-                <li className="flex items-start gap-2.5"><span className="text-[var(--color-cyan)] font-bold mt-0.5">·</span><span><strong className="text-[var(--color-white)]">Esecuzione contrattuale:</strong> erogazione dei servizi Sistema Orbis e Gestionale Orbis, gestione dell'account, supporto tecnico.</span></li>
+                <li className="flex items-start gap-2.5"><span className="text-[var(--color-cyan)] font-bold mt-0.5">·</span><span><strong className="text-[var(--color-white)]">Esecuzione contrattuale:</strong> erogazione dei servizi Orbis Hub e Orbis Repair, gestione dell'account, supporto tecnico.</span></li>
                 <li className="flex items-start gap-2.5"><span className="text-[var(--color-cyan)] font-bold mt-0.5">·</span><span><strong className="text-[var(--color-white)]">Obblighi di legge:</strong> adempimenti fiscali, contabili e di legge.</span></li>
                 <li className="flex items-start gap-2.5"><span className="text-[var(--color-cyan)] font-bold mt-0.5">·</span><span><strong className="text-[var(--color-white)]">Legittimo interesse:</strong> sicurezza della piattaforma, prevenzione frodi, analisi aggregate per il miglioramento del servizio.</span></li>
                 <li className="flex items-start gap-2.5"><span className="text-[var(--color-cyan)] font-bold mt-0.5">·</span><span><strong className="text-[var(--color-white)]">Consenso:</strong> invio di comunicazioni promozionali (solo con esplicito consenso dell'utente).</span></li>

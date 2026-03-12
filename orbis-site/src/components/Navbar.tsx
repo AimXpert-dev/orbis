@@ -3,8 +3,8 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 const soluzioni = [
-  { label: "Sistema Orbis", href: "/sistema", desc: "Prenotazioni e comunicazioni multicanale" },
-  { label: "Gestionale Orbis", href: "/gestionale", desc: "Gestionale per centri riparazione" },
+  { label: "Orbis Hub", href: "/sistema", desc: "Prenotazioni e comunicazioni multicanale" },
+  { label: "Orbis Repair", href: "/gestionale", desc: "Gestionale per centri riparazione" },
 ];
 
 const navLinks = [
