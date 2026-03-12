@@ -5,7 +5,7 @@ import Link from "next/link";
 const products = [
   {
     id: "sistema",
-    name: "Orbis Sistema",
+    name: "Sistema Orbis",
     tagline: "Prenotazioni & Comunicazioni",
     desc: "Gestisci prenotazioni, clienti e comunicazioni su Discord, Telegram, App Mobile e WhatsApp — tutto sincronizzato in tempo reale da un unico centro di controllo.",
     href: "/sistema",
@@ -26,7 +26,7 @@ const products = [
   },
   {
     id: "gestionale",
-    name: "Orbis Gestionale",
+    name: "Gestionale Orbis",
     tagline: "Gestionale Riparazioni",
     desc: "Gestisci riparazioni, clienti, magazzino e documenti — con tracking pubblico, notifiche automatiche e dashboard in tempo reale. Tutto in un'unica piattaforma.",
     href: "/gestionale",

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import ChannelIcon from "@/components/ChannelIcon";
 
 export const metadata: Metadata = {
-  title: "Pacchetti — Orbis Sistema",
+  title: "Pacchetti — Sistema Orbis",
   description: "Bundle multicanale con risparmio garantito. App + Discord + Telegram + WhatsApp.",
 };
 

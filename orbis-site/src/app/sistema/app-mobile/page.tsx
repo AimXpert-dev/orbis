@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import ChannelIcon from "@/components/ChannelIcon";
 
 export const metadata: Metadata = {
-  title: "App Mobile — Orbis Sistema",
+  title: "App Mobile — Sistema Orbis",
   description: "App nativa iOS e Android, completamente white label. Gestisci prenotazioni e clienti dal tuo smartphone.",
 };
 

@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import ChannelIcon from "@/components/ChannelIcon";
 
 export const metadata: Metadata = {
-  title: "Funzionalità — Orbis Sistema",
-  description: "Scopri tutte le funzionalità di Orbis Sistema: Discord, Telegram, App Mobile, WhatsApp e molto altro.",
+  title: "Funzionalità — Sistema Orbis",
+  description: "Scopri tutte le funzionalità di Sistema Orbis: Discord, Telegram, App Mobile, WhatsApp e molto altro.",
 };
 
 const channels = [

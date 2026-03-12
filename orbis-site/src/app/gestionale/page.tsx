@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Orbis Gestionale — Gestionale Riparazioni",
+  title: "Gestionale Orbis — Gestionale Riparazioni",
   description:
     "Gestisci riparazioni, clienti, magazzino e documenti con tracking pubblico, notifiche automatiche e dashboard in tempo reale.",
 };
@@ -134,7 +134,7 @@ export default function GestionalePage() {
 
             <div className="inline-flex items-center gap-2.5 bg-[rgba(124,58,237,0.1)] border border-[rgba(124,58,237,0.25)] rounded-full px-4 py-1.5 text-[11px] font-bold tracking-[2px] text-[#A78BFA] uppercase mb-8">
               <span className="w-2 h-2 rounded-full bg-[#A78BFA] animate-pulse" />
-              Orbis Gestionale
+              Gestionale Orbis
             </div>
 
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(32px,5vw,60px)] font-black tracking-[4px] leading-[1.1] mb-6">
@@ -278,10 +278,10 @@ export default function GestionalePage() {
                 Integrazione
               </div>
               <h2 className="font-[family-name:var(--font-display)] text-[clamp(22px,3.5vw,36px)] font-bold tracking-[3px] mb-5">
-                Connesso con Orbis Sistema
+                Connesso con Sistema Orbis
               </h2>
               <p className="text-[var(--color-muted)] text-base leading-relaxed mb-6">
-                Il Gestionale si integra con Orbis Sistema. I clienti si sincronizzano,
+                Il Gestionale si integra con Sistema Orbis. I clienti si sincronizzano,
                 le notifiche partono su tutti i canali e hai una visione completa
                 del tuo business.
               </p>
@@ -334,7 +334,7 @@ export default function GestionalePage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(124,58,237,0.07)_0%,transparent_70%)] pointer-events-none" />
         <div className="relative max-w-[600px] mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-[clamp(28px,5vw,48px)] font-black tracking-[4px] mb-5">
-            Prova Orbis Gestionale
+            Prova Gestionale Orbis
           </h2>
           <p className="text-[var(--color-muted)] text-[17px] mb-10 max-w-[460px] mx-auto">
             Richiedi una demo gratuita. Ti mostriamo come funziona
