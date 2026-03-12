@@ -4,24 +4,20 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Orbis Gestionale — Gestione Aziendale Completa",
+  title: "Orbis Gestionale — Gestionale Riparazioni",
   description:
-    "Contabilità, fatturazione, gestione clienti e fornitori, inventario e report analitici. La piattaforma gestionale completa per il tuo business italiano.",
+    "Gestisci riparazioni, clienti, magazzino e documenti con tracking pubblico, notifiche automatiche e dashboard in tempo reale.",
 };
 
 const features = [
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-        <polyline points="14 2 14 8 20 8"/>
-        <line x1="16" y1="13" x2="8" y2="13"/>
-        <line x1="16" y1="17" x2="8" y2="17"/>
-        <polyline points="10 9 9 9 8 9"/>
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
       </svg>
     ),
-    title: "Contabilità e Fatturazione",
-    desc: "Emetti fatture elettroniche conformi SDI, gestisci la prima nota, riconcilia i pagamenti e mantieni la contabilità sempre in ordine con un solo strumento.",
+    title: "Workflow Riparazioni",
+    desc: "Gestisci l'intero ciclo: Accettato, In lavorazione, Attesa ricambi, Pronto, Consegnato. Storico completo di ogni cambio stato con timestamp.",
     color: "#A78BFA",
   },
   {
@@ -33,8 +29,8 @@ const features = [
         <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
       </svg>
     ),
-    title: "Gestione Clienti e Fornitori",
-    desc: "Anagrafica completa con storico ordini, pagamenti e comunicazioni. Tieni traccia di ogni relazione commerciale e non perdere mai una scadenza.",
+    title: "Anagrafica Clienti",
+    desc: "Gestione completa dei clienti con nome, telefono, email, codice fiscale e note. Ricerca rapida, filtri e import/export CSV.",
     color: "#34D399",
   },
   {
@@ -45,9 +41,32 @@ const features = [
         <line x1="12" y1="22.08" x2="12" y2="12"/>
       </svg>
     ),
-    title: "Inventario e Magazzino",
-    desc: "Monitora le scorte in tempo reale, imposta soglie di riordino automatico e gestisci entrate e uscite di magazzino con precisione assoluta.",
+    title: "Magazzino Articoli",
+    desc: "Inventario con categorie, prezzi acquisto/vendita, scorte minime con allerta automatica, posizione scaffale e collegamento diretto alle riparazioni.",
     color: "#F59E0B",
+  },
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+        <polyline points="10 17 15 12 10 7"/>
+        <line x1="15" y1="12" x2="3" y2="12"/>
+      </svg>
+    ),
+    title: "Tracking Pubblico",
+    desc: "I tuoi clienti possono seguire lo stato della riparazione inserendo il codice univoco, senza bisogno di account. Trasparenza totale.",
+    color: "#00AEEF",
+  },
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+    ),
+    title: "Notifiche Automatiche",
+    desc: "Email automatiche ad ogni cambio stato con template personalizzabili. Integrazione WhatsApp per comunicare con i clienti in un tap.",
+    color: "#34D399",
   },
   {
     icon: (
@@ -57,22 +76,22 @@ const features = [
         <line x1="6" y1="20" x2="6" y2="14"/>
       </svg>
     ),
-    title: "Report e Analisi",
-    desc: "Visualizza andamento fatturato, margini, crediti e debiti con grafici interattivi. Prendi decisioni basate sui dati reali della tua azienda.",
+    title: "Dashboard e Statistiche",
+    desc: "Riparazioni mensili, ricavi, tempo medio di lavorazione, analisi per tipo dispositivo. Promemoria automatici per riparazioni ferme da troppo tempo.",
     color: "#60A5FA",
   },
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="7" height="7"/>
-        <rect x="14" y="3" width="7" height="7"/>
-        <rect x="14" y="14" width="7" height="7"/>
-        <rect x="3" y="14" width="7" height="7"/>
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
       </svg>
     ),
-    title: "Dashboard Intuitiva",
-    desc: "Tutto ciò che ti serve a colpo d'occhio. KPI aziendali, attività recenti, scadenze imminenti — la visione completa del tuo business in una schermata.",
-    color: "#00AEEF",
+    title: "Documenti e DDT",
+    desc: "Genera ricevute professionali con barcode, etichette per stampanti termiche 58/80mm e documenti di trasporto con numerazione automatica.",
+    color: "#F472B6",
   },
   {
     icon: (
@@ -81,15 +100,15 @@ const features = [
         <path d="M9 12l2 2 4-4"/>
       </svg>
     ),
-    title: "Accesso Multi-Utente",
-    desc: "Gestisci permessi granulari per il tuo team. Ogni collaboratore vede e modifica solo ciò che gli compete, con log completo di ogni operazione.",
-    color: "#F472B6",
+    title: "Multi-Negozio e Ruoli",
+    desc: "Supporto per più sedi con separazione dati. Ruoli Admin e Tecnico con permessi differenziati. Ogni collaboratore vede solo ciò che gli compete.",
+    color: "#A78BFA",
   },
 ];
 
 const benefits = [
-  { num: "100%", label: "Conforme normativa italiana" },
-  { num: "SDI", label: "Fatturazione elettronica integrata" },
+  { num: "5", label: "Stati workflow riparazione" },
+  { num: "PDF", label: "Ricevute, etichette e DDT" },
   { num: "24/7", label: "Accesso da qualsiasi dispositivo" },
   { num: "0", label: "Installazioni richieste" },
 ];
@@ -119,14 +138,14 @@ export default function GestionalePage() {
             </div>
 
             <h1 className="font-[family-name:var(--font-display)] text-[clamp(32px,5vw,60px)] font-black tracking-[4px] leading-[1.1] mb-6">
-              Gestisci tutto.<br />
-              <span className="text-[#A78BFA]">Da un solo posto.</span>
+              Riparazioni.<br />
+              <span className="text-[#A78BFA]">Sotto controllo.</span>
             </h1>
 
             <p className="text-[var(--color-muted)] text-lg leading-relaxed mb-10 max-w-[520px]">
-              La piattaforma gestionale completa per il business italiano.
-              Contabilità, clienti, magazzino e analisi — tutto integrato,
-              tutto accessibile da qualsiasi dispositivo.
+              Il gestionale completo per centri riparazione.
+              Workflow, clienti, magazzino, documenti e tracking pubblico —
+              tutto in un&apos;unica piattaforma accessibile da qualsiasi dispositivo.
             </p>
 
             <div className="flex gap-4 flex-wrap">
@@ -158,9 +177,9 @@ export default function GestionalePage() {
               {/* Stats row */}
               <div className="grid grid-cols-3 gap-3 mb-4">
                 {[
-                  { label: "Fatturato", value: "€ 24.800", color: "#A78BFA" },
-                  { label: "Clienti", value: "148", color: "#34D399" },
-                  { label: "Ordini", value: "37", color: "#60A5FA" },
+                  { label: "In lavorazione", value: "12", color: "#A78BFA" },
+                  { label: "Pronte", value: "8", color: "#34D399" },
+                  { label: "Oggi", value: "5", color: "#60A5FA" },
                 ].map((s) => (
                   <div key={s.label} className="bg-[var(--color-bg)] rounded-lg p-3 border border-[var(--color-border)]">
                     <div className="text-[10px] text-[var(--color-muted)] mb-1">{s.label}</div>
@@ -171,7 +190,7 @@ export default function GestionalePage() {
 
               {/* Chart placeholder */}
               <div className="bg-[var(--color-bg)] rounded-lg p-4 border border-[var(--color-border)] mb-3 h-[90px] relative overflow-hidden">
-                <div className="text-[10px] text-[var(--color-muted)] mb-2">Andamento mensile</div>
+                <div className="text-[10px] text-[var(--color-muted)] mb-2">Riparazioni mensili</div>
                 <div className="flex items-end gap-1.5 h-[52px]">
                   {[35, 55, 45, 70, 60, 85, 75, 90, 65, 80, 95, 88].map((h, i) => (
                     <div
@@ -188,10 +207,13 @@ export default function GestionalePage() {
 
               {/* List row */}
               <div className="flex flex-col gap-1.5">
-                {["Fattura #2847 — Rossi SRL", "Fattura #2848 — Bianchi & Co"].map((item, i) => (
+                {[
+                  { text: "REP-20260312-0047 — iPhone 15 Pro", status: "In lavorazione", color: "#A78BFA" },
+                  { text: "REP-20260312-0048 — MacBook Air M3", status: "Pronto", color: "#34D399" },
+                ].map((item, i) => (
                   <div key={i} className="flex items-center justify-between bg-[var(--color-bg)] rounded-lg px-3 py-2 border border-[var(--color-border)]">
-                    <span className="text-[10px] text-[var(--color-muted)]">{item}</span>
-                    <span className="text-[10px] font-bold text-[#34D399]">Pagata</span>
+                    <span className="text-[10px] text-[var(--color-muted)]">{item.text}</span>
+                    <span className="text-[10px] font-bold" style={{ color: item.color }}>{item.status}</span>
                   </div>
                 ))}
               </div>
@@ -217,21 +239,21 @@ export default function GestionalePage() {
         <div className="max-w-[1200px] mx-auto">
           <div className="text-center mb-16">
             <div className="text-[11px] font-bold tracking-[4px] text-[#A78BFA] uppercase mb-4">
-              Moduli
+              Funzionalità
             </div>
             <h2 className="font-[family-name:var(--font-display)] text-[clamp(26px,4vw,40px)] font-bold tracking-[3px] mb-4">
               Tutto quello che ti serve
             </h2>
             <p className="text-[var(--color-muted)] text-base max-w-[500px] mx-auto">
-              Ogni modulo è progettato per il mercato italiano e integrato nativamente con gli altri.
+              Ogni funzionalità è pensata per semplificare il lavoro quotidiano del tuo centro riparazioni.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((f) => (
               <div
                 key={f.title}
-                className="group bg-[var(--color-bg2)] border border-[var(--color-border)] rounded-2xl p-8 hover:border-[rgba(124,58,237,0.3)] hover:-translate-y-1 hover:shadow-[0_16px_50px_rgba(0,0,0,0.4)] transition-all"
+                className="group bg-[var(--color-bg2)] border border-[var(--color-border)] rounded-2xl p-7 hover:border-[rgba(124,58,237,0.3)] hover:-translate-y-1 hover:shadow-[0_16px_50px_rgba(0,0,0,0.4)] transition-all"
               >
                 <div
                   className="w-[50px] h-[50px] rounded-xl flex items-center justify-center mb-5"
@@ -239,7 +261,7 @@ export default function GestionalePage() {
                 >
                   {f.icon}
                 </div>
-                <h3 className="text-[16px] font-bold mb-3">{f.title}</h3>
+                <h3 className="text-[15px] font-bold mb-3">{f.title}</h3>
                 <p className="text-[13px] text-[var(--color-muted)] leading-relaxed">{f.desc}</p>
               </div>
             ))}
@@ -259,15 +281,15 @@ export default function GestionalePage() {
                 Connesso con Orbis Sistema
               </h2>
               <p className="text-[var(--color-muted)] text-base leading-relaxed mb-6">
-                Il Gestionale si integra nativamente con Orbis Sistema. Le prenotazioni
-                diventano automaticamente fatture, i clienti si sincronizzano e l'inventario
-                si aggiorna in tempo reale.
+                Il Gestionale si integra con Orbis Sistema. I clienti si sincronizzano,
+                le notifiche partono su tutti i canali e hai una visione completa
+                del tuo business.
               </p>
               <ul className="flex flex-col gap-3">
                 {[
-                  "Prenotazioni → fatture in automatico",
                   "Anagrafica clienti condivisa",
-                  "Report unificati su entrambe le piattaforme",
+                  "Notifiche multi-canale (Email, WhatsApp, Telegram)",
+                  "Dashboard unificata",
                   "Un unico login per tutto",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2.5 text-sm text-[var(--color-muted)]">
@@ -299,7 +321,7 @@ export default function GestionalePage() {
                 {/* Gestionale box */}
                 <div className="bg-[var(--color-bg)] border border-[rgba(124,58,237,0.3)] rounded-2xl p-5 w-[200px] shadow-[0_0_30px_rgba(124,58,237,0.1)]">
                   <div className="text-[11px] font-bold tracking-[2px] text-[#A78BFA] uppercase mb-2">Gestionale</div>
-                  <div className="text-[13px] text-[var(--color-muted)]">Contabilità, clienti, inventario</div>
+                  <div className="text-[13px] text-[var(--color-muted)]">Riparazioni, clienti, magazzino</div>
                 </div>
               </div>
             </div>
@@ -316,7 +338,7 @@ export default function GestionalePage() {
           </h2>
           <p className="text-[var(--color-muted)] text-[17px] mb-10 max-w-[460px] mx-auto">
             Richiedi una demo gratuita. Ti mostriamo come funziona
-            applicato alla tua specifica realtà aziendale.
+            applicato al tuo centro riparazioni.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link

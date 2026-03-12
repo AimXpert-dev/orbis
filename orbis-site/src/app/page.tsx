@@ -27,8 +27,8 @@ const products = [
   {
     id: "gestionale",
     name: "Orbis Gestionale",
-    tagline: "Gestione Aziendale Completa",
-    desc: "Contabilità, fatturazione, gestione clienti e fornitori, inventario e report analitici — tutto in un'unica piattaforma intuitiva per il tuo business.",
+    tagline: "Gestionale Riparazioni",
+    desc: "Gestisci riparazioni, clienti, magazzino e documenti — con tracking pubblico, notifiche automatiche e dashboard in tempo reale. Tutto in un'unica piattaforma.",
     href: "/gestionale",
     color: "#7C3AED",
     colorSecondary: "#A78BFA",
@@ -40,10 +40,10 @@ const products = [
       </svg>
     ),
     features: [
-      "Contabilità e fatturazione",
-      "Gestione clienti e fornitori",
-      "Inventario e magazzino",
-      "Dashboard e report analitici",
+      "Workflow riparazioni completo",
+      "Anagrafica clienti e magazzino",
+      "Tracking pubblico per clienti",
+      "Notifiche email e WhatsApp",
     ],
   },
 ];
@@ -111,7 +111,7 @@ export default function Home() {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-[rgba(0,87,255,0.12)] border border-[rgba(0,87,255,0.35)] rounded-full px-5 py-1.5 text-xs font-semibold tracking-[2px] text-[var(--color-cyan)] uppercase mb-9">
           <span className="text-[var(--color-green)] text-[8px]">●</span>
-          Soluzioni digitali per il business italiano
+          Soluzioni digitali per il business
         </div>
 
         {/* Title */}
@@ -127,8 +127,7 @@ export default function Home() {
         {/* Description */}
         <p className="max-w-[600px] text-[var(--color-muted)] text-[17px] leading-[1.75] mx-auto mb-13">
           Strumenti professionali per gestire ogni aspetto della tua attività —
-          dalla comunicazione con i clienti alla contabilità aziendale.
-          Tutto pensato per il mercato italiano.
+          dalla comunicazione con i clienti alla gestione operativa quotidiana.
         </p>
 
         {/* CTAs */}
